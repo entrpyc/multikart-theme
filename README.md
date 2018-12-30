@@ -15,7 +15,7 @@
  
  - Sage documentation - https://roots.io/sage/docs/theme-installation/
  
- - from wp-content/themes/your-theme-name **run npm install**
+ - from wp-content/themes/your-theme-name run **npm install**
 ##4. Install WooCommerce integration for Sage 9
 
  - cd wp-content/themes/your-sage-theme-folder
