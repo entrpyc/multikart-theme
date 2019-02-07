@@ -33,6 +33,6 @@
 		@if ( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $verified )
 			<em class="woocommerce-review__verified verified">{{ esc_attr__( 'verified owner', 'woocommerce' ) }}</em>
 		@endif
-		<span class="woocommerce-review__dash">&ndash;</span> <time class="woocommerce-review__published-date" datetime="{{ esc_attr( get_comment_date( 'c' ) }}">{{ esc_html( get_comment_date( wc_date_format() ) ) }}</time>
+		<span class="woocommerce-review__dash">&ndash;</span> <time class="woocommerce-review__published-date" datetime="{{ esc_attr( get_comment_date( 'c' )) }}">{{ esc_html( get_comment_date( wc_date_format() ) ) }}</time>
 	</p>
 @endif
