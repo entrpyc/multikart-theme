@@ -16,7 +16,6 @@ The template for displaying product content in the single-product.php template
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
 
-
 @php do_action( 'woocommerce_before_single_product' ); @endphp
 
 @php

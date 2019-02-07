@@ -20,5 +20,7 @@ const routes = new Router({
   aboutUs,
 });
 
+console.log('asdasd')
+
 // Load Events
 jQuery(document).ready(() => routes.loadEvents());
