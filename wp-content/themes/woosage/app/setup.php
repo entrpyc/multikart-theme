@@ -24,6 +24,15 @@ add_action('wp_enqueue_scripts', function () {
  */
 add_action('after_setup_theme', function () {
     /**
+     * Woocommerce Support, Wooccommerce Gallery Slider Support
+     * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
+     */
+    add_theme_support('woocommerce');
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+
+    /**
      * Enable features from Soil when plugin is activated
      * @link https://roots.io/plugins/soil/
      */
@@ -64,9 +73,6 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
-
-    add_theme_support('woocommerce');
-
 
     /**
      * Use main stylesheet for visual editor

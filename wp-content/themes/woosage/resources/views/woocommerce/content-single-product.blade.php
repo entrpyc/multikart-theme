@@ -16,32 +16,28 @@ The template for displaying product content in the single-product.php template
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
 
-@extends('layouts.app')
 
-@section('content')
+@php do_action( 'woocommerce_before_single_product' ); @endphp
 
-    @php do_action( 'woocommerce_before_single_product' ); @endphp
+@php
+    if ( post_password_required() ) {
+        echo get_the_password_form(); // WPCS: XSS ok.
+        return;
+    }
+@endphp
 
-    @php
-        if ( post_password_required() ) {
-            echo get_the_password_form(); // WPCS: XSS ok.
-            return;
-        }
-    @endphp
+<div id="product-{{ the_ID() }}" @php wc_product_class(); @endphp>
 
-    <div id="product-{{ the_ID() }}" @php wc_product_class(); @endphp>
+    @php do_action( 'woocommerce_before_single_product_summary' ); @endphp
 
-        @php do_action( 'woocommerce_before_single_product_summary' ); @endphp
-
-        <div class="summary entry-summary">
-            @php do_action( 'woocommerce_single_product_summary' ); @endphp
-        </div>
-
-        @php do_action( 'woocommerce_after_single_product_summary' ); @endphp
-
+    <div class="summary entry-summary">
+        @php do_action( 'woocommerce_single_product_summary' ); @endphp
     </div>
 
-    @php do_action( 'woocommerce_after_single_product' ); @endphp
+    @php do_action( 'woocommerce_after_single_product_summary' ); @endphp
 
-@endsection
+</div>
+
+@php do_action( 'woocommerce_after_single_product' ); @endphp
+
 
