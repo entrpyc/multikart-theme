@@ -44,3 +44,10 @@
 - If you want to replace particular template, please have a look into plugin folder woocommerce/templates and use same folder structure and file name (and change the extension to .blade.php) as the original template
 
 - Keep actions and filters!
+
+
+
+# WooCommerce Theme Development Tips
+1. If you want to see what do_action('hook_name') actually do, always check **wc-template-hooks.php**. Search for the hook and see what functions are actually attached to this hook. Search for the function you want to see more detailed. This way we can move parts and call functions from the blade.
+2. You can see the actual controllers the blade using when you put @debug in blades
+3. You can see the actual version of overwritten template and compare/update if needed with plugins/woocommerce/templates 
