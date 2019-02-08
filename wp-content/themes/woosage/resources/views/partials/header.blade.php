@@ -6,5 +6,12 @@
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
       @endif
     </nav>
+    <div class="profile">
+      @if ( is_user_logged_in() )
+      <a href="{{ get_permalink( get_option('woocommerce_myaccount_page_id') ) }}" title="{{ __('My Account','woocommerce') }}">{{ __('My Account','woocommerce') }}</a>
+      @else
+      <a href="{{ get_permalink( get_option('woocommerce_myaccount_page_id') ) }}" title="{{ __('Login / Register','woocommerce') }}">{{ __('Login / Register','woocommerce') }}</a>
+      @endif
+    </div>
   </div>
 </header>
