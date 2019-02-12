@@ -12,8 +12,8 @@ class ArchiveProduct extends Controller
 
     }
 
-    public function test2()
+    public function testDefaultShopPage()
     {
-       // dd('Archive Product Page - Loop Products');
+       //dd('Archive Product Page - Loop Products - Global Shop Page');
     }
 }
