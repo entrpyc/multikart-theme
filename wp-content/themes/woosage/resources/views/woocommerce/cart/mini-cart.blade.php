@@ -56,10 +56,10 @@
 							{!! $thumbnail . $product_name  !!}
 						@else
 							<a href="{{ esc_url( $product_permalink ) }}">
-								{!! $thumbnail . $product_name !!} >
+								{!! $thumbnail . $product_name !!}
 							</a>
-						@endif; ?>
-						{!!  wc_get_formatted_cart_item_data( $cart_item  !!}
+						@endif
+						{!!  wc_get_formatted_cart_item_data( $cart_item ) !!}
 						{!! apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ) !!}
 					</li>
 				@endif
