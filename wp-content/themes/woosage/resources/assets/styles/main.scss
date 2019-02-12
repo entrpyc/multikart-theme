@@ -1,25 +1,8 @@
-@import "common/variables";
+/* stylelint-disable selector-no-id, declaration-no-important, rule-empty-line-before */
 
-/** Import everything from autoload */
+/** Import everything from autoload - bootstrap, etc... */
 @import "./autoload/**/*";
-
-/**
- * Import npm dependencies
- *
- * Prefix your imports with `~` to grab from node_modules/
- * @see https://github.com/webpack-contrib/sass-loader#imports
- */
-// @import "~some-node-module";
-
-/** Import theme styles */
-@import "common/global";
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+@import "common/index";
+@import "components/index";
+@import "layouts/index";
+@import "pages/index";

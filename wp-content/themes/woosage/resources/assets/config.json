@@ -8,8 +8,8 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/sage",
-  "devUrl": "http://example.test",
+  "publicPath": "/wp-content/themes/woosage",
+  "devUrl": "http://woocommerce.local/",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

@@ -1,10 +1,4 @@
-/** Import Bootstrap functions */
-@import "~bootstrap/scss/functions";
-
-$theme-colors: (
-  primary: #525ddc
-);
-
-/** Bootstrap navbar fix (https://git.io/fADqW) */
-$navbar-dark-toggler-icon-bg: none;
-$navbar-light-toggler-icon-bg: none;
+/* stylelint-disable selector-no-id, declaration-no-important, rule-empty-line-before */
+$pink: #ff009b;
+$gray: #989898;
+$black: #000;
