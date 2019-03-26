@@ -72,14 +72,14 @@
 			@foreach ( $order->get_order_item_totals() as $key => $total )
 				<tr>
 					<th scope="row">{{ $total['label'] }}</th>
-					<td>{{ ( 'payment_method' === $key ) ? esc_html( $total['value'] ) : $total['value'] }}</td>
+					<td>{!! ( 'payment_method' === $key ) ? esc_html( $total['value'] ) : $total['value'] !!}</td>
 				</tr>
 			@endforeach
 
 			@if ( $order->get_customer_note() )
 				<tr>
 					<th>{{ __( 'Note:', 'woocommerce' ) }}</th>
-					<td>{{ wptexturize( $order->get_customer_note() ) }}</td>
+					<td>{!! wptexturize( $order->get_customer_note() ) !!}</td>
 				</tr>
 			@endif
 		</tfoot>
