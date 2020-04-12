@@ -14,7 +14,7 @@
  * @see 	https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.2.0
+ * @version 3.7.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
@@ -36,7 +36,7 @@
 			@foreach ( $customer_orders->orders as $customer_order )
 				@php
 					$order      = wc_get_order( $customer_order );
-					$item_count = $order->get_item_count();
+					$item_count = $order->get_item_count() - $order->get_item_count_refunded();
 				@endphp
 
 				<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> order">
@@ -47,7 +47,7 @@
 
 							@elseif ( 'order-number' === $column_id )
 								<a href="{{ esc_url( $order->get_view_order_url() ) }}">
-									{!!  _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number() !!}
+									{!!  esc_html( _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number() ) !!}
 								</a>
 
 							@elseif ( 'order-date' === $column_id )
@@ -59,7 +59,7 @@
 							@elseif ( 'order-total' === $column_id )
 								@php
 								/* translators: 1: formatted order total 2: total order items */
-								printf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count );
+								echo wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) );
 								@endphp
 
 							@elseif ( 'order-actions' === $column_id )
@@ -97,7 +97,7 @@
 @else
 	<div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
 		<a class="woocommerce-Button button" href="{{ esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) }}">
-			{{ __( 'Go shop', 'woocommerce' ) }}
+			{{ __( 'Browse products', 'woocommerce' ) }}
 		</a>
 		{{ __( 'No order has been made yet.', 'woocommerce' ) }}
 	</div>

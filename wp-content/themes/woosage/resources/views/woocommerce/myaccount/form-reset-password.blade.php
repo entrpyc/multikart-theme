@@ -14,7 +14,9 @@
  * @version 3.5.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
+
+@php do_action( 'woocommerce_before_reset_password_form' ); @endphp
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
@@ -44,3 +46,5 @@
 	@php wp_nonce_field( 'reset_password', 'woocommerce-reset-password-nonce' ) @endphp
 
 </form>
+
+@php do_action( 'woocommerce_after_reset_password_form' ); @endphp

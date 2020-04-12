@@ -11,7 +11,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 4.1.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
@@ -45,11 +45,11 @@
 			@php do_action( 'woocommerce_login_form')  @endphp
 
 			<p class="form-row">
-				@php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ) @endphp
-				<button type="submit" class="woocommerce-Button button" name="login" value="{{ esc_attr( 'Log in', 'woocommerce' ) }}">{{ __( 'Log in', 'woocommerce' ) }}</button>
-				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
 					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>{{ __( 'Remember me', 'woocommerce' ) }}</span>
 				</label>
+				@php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ) @endphp
+				<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="login" value="{{ esc_attr( 'Log in', 'woocommerce' ) }}">{{ __( 'Log in', 'woocommerce' ) }}</button>
 			</p>
 			<p class="woocommerce-LostPassword lost_password">
 				<a href="{{ esc_url( wp_lostpassword_url() ) }}">{{ __( 'Lost your password?', 'woocommerce' ) }}</a>
@@ -92,13 +92,17 @@
 					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
 				</p>
 
+			@else
+
+				<p><{!! __( 'A password will be sent to your email address.', 'woocommerce' ) !!} ?></p>
+
 			@endif
 
 			@php do_action( 'woocommerce_register_form' ) @endphp
 
-			<p class="woocommerce-FormRow form-row">
+			<p class="woocommerce-form-row form-row">
 				@php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ) @endphp
-				<button type="submit" class="woocommerce-Button button" name="register" value="{{ esc_attr( 'Register', 'woocommerce' ) }}">{{ __( 'Register', 'woocommerce' ) }}</button>
+				<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="{{ esc_attr( 'Register', 'woocommerce' ) }}">{{ __( 'Register', 'woocommerce' ) }}</button>
 			</p>
 
 			@php do_action( 'woocommerce_register_form_end' ) @endphp

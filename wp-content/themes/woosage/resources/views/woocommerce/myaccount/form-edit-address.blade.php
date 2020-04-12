@@ -11,7 +11,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.6.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
@@ -36,9 +36,6 @@
 			<div class="woocommerce-address-fields__field-wrapper">
 				@php
 					foreach ( $address as $key => $field ) {
-						if ( isset( $field['country_field'], $address[ $field['country_field'] ] ) ) {
-							$field['country'] = wc_get_post_data_by_key( $field['country_field'], $address[ $field['country_field'] ]['value'] );
-						}
 						woocommerce_form_field( $key, $field, wc_get_post_data_by_key( $key, $field['value'] ) );
 					}
 				@endphp
