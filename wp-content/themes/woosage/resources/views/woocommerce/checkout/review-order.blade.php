@@ -12,10 +12,10 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.0
+ * @version     3.8.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
@@ -29,14 +29,14 @@
 
 			@foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item )
 				@php
-					$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+					$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				@endphp
 
 				@if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) )
 					<tr class="{{  esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) )  }}">
 						<td class="product-name">
 							{!! apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' !!}
-							{!! apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ) !!}
+							{!! apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ) !!}
 							{!! wc_get_formatted_cart_item_data( $cart_item ) !!}
 						</td>
 						<td class="product-total">
@@ -84,7 +84,7 @@
 		@if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() )
 			@if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) )
 				@foreach ( WC()->cart->get_tax_totals() as $code => $tax )
-					<tr class="tax-rate tax-rate-{{ sanitize_title( $code ) }}">
+					<tr class="tax-rate tax-rate-{{ esc_attr(sanitize_title( $code )) }}">
 						<th>{{ esc_html( $tax->label ) }}</th>
 						<td>{!! wp_kses_post( $tax->formatted_amount ) !!}</td>
 					</tr>

@@ -5,7 +5,7 @@
  * @version 3.4.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @if ( apply_filters( 'woocommerce_checkout_show_terms', true ) && function_exists( 'wc_terms_and_conditions_checkbox_enabled' ) )
 	@php do_action( 'woocommerce_checkout_before_terms_and_conditions' )  @endphp

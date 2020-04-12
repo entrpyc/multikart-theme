@@ -12,10 +12,11 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.9
+ * @version 3.6.0
+ * @global WC_Checkout $checkout
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 <div class="woocommerce-shipping-fields">
 	@if ( true === WC()->cart->needs_shipping_address() )
@@ -34,12 +35,9 @@
 				@php
 					$fields = $checkout->get_checkout_fields( 'shipping' );
 
-					foreach ( $fields as $key => $field ) {
-						if ( isset( $field['country_field'], $fields[ $field['country_field'] ] ) ) {
-							$field['country'] = $checkout->get_value( $field['country_field'] );
-						}
-						woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
-					}
+                    foreach ( $fields as $key => $field ) {
+                        woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+                    }
 				@endphp
 			</div>
 

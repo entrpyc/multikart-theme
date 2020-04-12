@@ -14,7 +14,7 @@
  * @version 3.4.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
 	$totals = $order->get_order_item_totals();

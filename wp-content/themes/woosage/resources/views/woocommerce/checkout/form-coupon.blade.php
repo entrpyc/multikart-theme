@@ -14,7 +14,7 @@
  * @version 3.4.4
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
 	if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
@@ -23,7 +23,7 @@
 @endphp
 
 <div class="woocommerce-form-coupon-toggle">
-	@php wc_print_notice( apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'woocommerce' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'woocommerce' ) . '</a>' ), 'notice' ) @endphp
+	@php wc_print_notice( apply_filters( 'woocommerce_checkout_coupon_message', esc_html__( 'Have a coupon?', 'woocommerce' ) . ' <a href="#" class="showcoupon">' . esc_html__( 'Click here to enter your code', 'woocommerce' ) . '</a>' ), 'notice' ) @endphp
 </div>
 
 <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
