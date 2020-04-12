@@ -12,7 +12,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @version 3.6.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
@@ -20,9 +20,9 @@
 @php
 	global $product;
 
-	if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' ) {
-		return;
-	}
+    if ( ! wc_review_ratings_enabled() ) {
+        return;
+    }
 @endphp
 
-{!!  wc_get_rating_html( $product->get_average_rating())  !!}
+{!!  wc_get_rating_html( $product->get_average_rating() ) // WordPress.XSS.EscapeOutput.OutputNotEscaped.  !!}

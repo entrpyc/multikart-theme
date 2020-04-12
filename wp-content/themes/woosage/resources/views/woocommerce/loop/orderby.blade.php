@@ -12,13 +12,13 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.0
+ * @version     3.6.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
 
 <form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby">
+	<select name="orderby" class="orderby" aria-label="{{ __( 'Shop order', 'woocommerce' ) }}">
 		@foreach ( $catalog_orderby_options as $id => $name )
 			<option value="{{ esc_attr( $id ) }}" @php selected( $orderby, $id ) @endphp >{{ esc_html( $name ) }}</option>
 		@endforeach
