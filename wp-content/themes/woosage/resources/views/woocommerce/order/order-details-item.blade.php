@@ -12,7 +12,7 @@
  * @see 	https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.7.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
@@ -28,16 +28,26 @@
 	<td class="woocommerce-table__product-name product-name">
 		@php
 			$is_visible        = $product && $product->is_visible();
-			$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
+            $product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
 
-			echo apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible );
-			echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', $item->get_quantity() ) . '</strong>', $item );
+            echo apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-			do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
+            $qty          = $item->get_quantity();
+            $refunded_qty = $order->get_qty_refunded_for_item( $item_id );
 
-			wc_display_item_meta( $item );
+            if ( $refunded_qty ) {
+                $qty_display = '<del>' . esc_html( $qty ) . '</del> <ins>' . esc_html( $qty - ( $refunded_qty * -1 ) ) . '</ins>';
+            } else {
+                $qty_display = esc_html( $qty );
+            }
 
-			do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
+            echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $qty_display ) . '</strong>', $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+            do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
+
+            wc_display_item_meta( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+            do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
 		@endphp
 	</td>
 

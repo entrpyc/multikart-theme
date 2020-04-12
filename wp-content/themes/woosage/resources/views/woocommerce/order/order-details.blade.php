@@ -12,13 +12,15 @@
  * @see 	https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.2
+ * @version 3.7.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
-	if ( ! $order = wc_get_order( $order_id ) ) {
+	$order = wc_get_order( $order_id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+
+	if ( ! $order ) {
 		return;
 	}
 
@@ -79,7 +81,7 @@
 			@if ( $order->get_customer_note() )
 				<tr>
 					<th>{{ __( 'Note:', 'woocommerce' ) }}</th>
-					<td>{!! wptexturize( $order->get_customer_note() ) !!}</td>
+					<td>{!! nl2br(wptexturize( $order->get_customer_note() )) !!}</td>
 				</tr>
 			@endif
 		</tfoot>
