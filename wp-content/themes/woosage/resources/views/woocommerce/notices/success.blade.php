@@ -11,20 +11,20 @@
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @package     WooCommerce/Templates
- * @version     3.5.0
+ * @version     3.9.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
 
 @php
-	if ( ! $messages ) {
+	if ( ! $notices ) {
 		return;
 	}
 @endphp
 
 
-@foreach ( $messages as $message )
-	<div class="woocommerce-message" role="alert">
-		{!!  wc_kses_notice( $message ) !!}
+@foreach ( $notices as $notice )
+	<div class="woocommerce-message" {!! wc_get_notice_data_attr( $notice ) !!} role="alert">
+		{!!  wc_kses_notice( $notice['notice'] ) !!}
 	</div>
 @endforeach
