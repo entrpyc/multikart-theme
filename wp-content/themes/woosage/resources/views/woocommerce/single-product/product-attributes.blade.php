@@ -14,56 +14,23 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.1.0
+ * @version 3.6.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
+
+@php
+	if ( ! $product_attributes ) {
+        return;
+    }
+@endphp
 
 
-<table class="shop_attributes">
-	@if ( $display_dimensions && $product->has_weight() )
-		<tr>
-			<th>{{ __( 'Weight', 'woocommerce' ) }}</th>
-			<td class="product_weight">{{ esc_html( wc_format_weight( $product->get_weight() ) ) }}</td>
-		</tr>
-	@endif
-
-	@if ( $display_dimensions && $product->has_dimensions() )
-		<tr>
-			<th><{{ __( 'Dimensions', 'woocommerce' ) }}</th>
-			<td class="product_dimensions">{{ esc_html( wc_format_dimensions( $product->get_dimensions( false ) ) ) }}</td>
-		</tr>
-	@endif
-
-	@foreach ( $attributes as $attribute )
-		<tr>
-			<th>{!! wc_attribute_label( $attribute->get_name() ) !!}</th>
-			<td>@php
-				$values = array();
-
-				if ( $attribute->is_taxonomy() ) {
-					$attribute_taxonomy = $attribute->get_taxonomy_object();
-					$attribute_values = wc_get_product_terms( $product->get_id(), $attribute->get_name(), array( 'fields' => 'all' ) );
-
-					foreach ( $attribute_values as $attribute_value ) {
-						$value_name = esc_html( $attribute_value->name );
-
-						if ( $attribute_taxonomy->attribute_public ) {
-							$values[] = '<a href="' . esc_url( get_term_link( $attribute_value->term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
-						} else {
-							$values[] = $value_name;
-						}
-					}
-				} else {
-					$values = $attribute->get_options();
-
-					foreach ( $values as &$value ) {
-						$value = make_clickable( esc_html( $value ) );
-					}
-				}
-
-				echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
-			@endphp</td>
+<table class="woocommerce-product-attributes shop_attributes">
+	@foreach($product_attributes as $product_attribute_key => $product_attribute)
+		<tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--{{ esc_attr( $product_attribute_key ) }} ?>">
+			<th class="woocommerce-product-attributes-item__label">{!! wp_kses_post( $product_attribute['label'] ) !!}</th>
+			<td class="woocommerce-product-attributes-item__value">{!! wp_kses_post( $product_attribute['value'] ) !!}</td>
 		</tr>
 	@endforeach
 </table>

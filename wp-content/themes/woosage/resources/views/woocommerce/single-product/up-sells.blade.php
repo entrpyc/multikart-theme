@@ -21,7 +21,13 @@
 
 	<section class="up-sells upsells products">
 
-		<h2>{{ __( 'You may also like&hellip;', 'woocommerce' ) }}</h2>
+		@php
+			$heading = apply_filters( 'woocommerce_product_upsells_products_heading', __( 'You may also like&hellip;', 'woocommerce' ) );
+		@endphp
+
+		@if($heading)
+			<h2>{{ $heading }}</h2>
+		@endif
 
 		@php woocommerce_product_loop_start(); @endphp
 

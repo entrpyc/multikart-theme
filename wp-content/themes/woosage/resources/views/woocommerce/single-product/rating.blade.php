@@ -12,7 +12,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.6.0
 --}}
 
 @php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
@@ -20,13 +20,13 @@
 @php
 	global $product;
 
-	if ( 'no' === get_option( 'woocommerce_enable_review_rating' ) ) {
-		return;
-	}
+    if ( ! wc_review_ratings_enabled() ) {
+        return;
+    }
 
-	$rating_count = $product->get_rating_count();
-	$review_count = $product->get_review_count();
-	$average      = $product->get_average_rating();
+    $rating_count = $product->get_rating_count();
+    $review_count = $product->get_review_count();
+    $average      = $product->get_average_rating();
 @endphp
 
 @if ( $rating_count > 0 )
@@ -34,7 +34,7 @@
 		{!! wc_get_rating_html( $average, $rating_count ) !!}
 		@if ( comments_open() )
 			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">
-				(@php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ) @endphp)
+				(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)
 			</a>
 		@endif
 	</div>
