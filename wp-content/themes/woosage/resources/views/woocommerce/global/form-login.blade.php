@@ -12,10 +12,10 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.0
+ * @version     3.6.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
 	if ( is_user_logged_in() ) {
@@ -42,12 +42,12 @@
 	@php do_action( 'woocommerce_login_form' ) @endphp
 
 	<p class="form-row">
-		@php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ) @endphp
-		<button type="submit" class="button" name="login" value="{{ esc_attr( 'Login', 'woocommerce' ) }}">{{ __( 'Login', 'woocommerce' ) }}</button>
-		<input type="hidden" name="redirect" value="{{ esc_url( $redirect ) }}" />
-		<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+		<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
 			<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>{{ __( 'Remember me', 'woocommerce' ) }}></span>
 		</label>
+		@php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); @endphp
+		<input type="hidden" name="redirect" value="{{ esc_url( $redirect ) }}" />
+		<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="{{ __( 'Login', 'woocommerce' ) }}">{{ __( 'Login', 'woocommerce' ) }}</button>
 	</p>
 	<p class="lost_password">
 		<a href="{{ esc_url( wp_lostpassword_url() ) }}">{{ __( 'Lost your password?', 'woocommerce' ) }}</a>
