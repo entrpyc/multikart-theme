@@ -12,10 +12,10 @@
  * @see 	https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.4.0
+ * @version 3.8.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
 	/**
@@ -24,26 +24,28 @@
 	 * Each tab is an array containing title, callback and priority.
 	 * @see woocommerce_default_product_tabs()
 	 */
-	$tabs = apply_filters( 'woocommerce_product_tabs', array() );
+	$product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 @endphp
 
-@if ( ! empty( $tabs ) )
+@if ( ! empty( $product_tabs ) )
 
 	<div class="woocommerce-tabs wc-tabs-wrapper">
 		<ul class="tabs wc-tabs" role="tablist">
-			@foreach ( $tabs as $key => $tab )
+			@foreach ( $product_tabs as $key => $product_tab )
 				<li class="{{ esc_attr( $key ) }}_tab" id="tab-title-{{ esc_attr( $key ) }}>" role="tab" aria-controls="tab-{{ esc_attr( $key ) }}">
-					<a href="#tab-{{ esc_attr( $key ) }}">{!! apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ) !!}</a>
+					<a href="#tab-{{ esc_attr( $key ) }}">{!!  wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ) !!}</a>
 				</li>
 			@endforeach
 		</ul>
-		@foreach ( $tabs as $key => $tab )
+		@foreach ( $product_tabs as $key => $product_tab )
 			<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--{{ esc_attr( $key ) }} panel entry-content wc-tab" id="tab-{{ esc_attr( $key ) }}" role="tabpanel" aria-labelledby="tab-title-{{ esc_attr( $key ) }}">
-				@if ( isset( $tab['callback'] ) )
-					@php call_user_func( $tab['callback'], $key, $tab ) @endphp
+				@if ( isset( $product_tab['callback'] ) )
+					@php call_user_func( $product_tab['callback'], $key, $product_tab ) @endphp
 				@endif
 			</div>
 		@endforeach
+
+		@php do_action( 'woocommerce_product_after_tabs' ); @endphp
 	</div>
 
 @endif

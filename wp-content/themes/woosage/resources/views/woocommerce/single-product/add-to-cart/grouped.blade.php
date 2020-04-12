@@ -11,10 +11,10 @@
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @package     WooCommerce/Templates
- * @version     3.4.0
+ * @version     4.0.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
 	global $product, $post;
@@ -33,6 +33,8 @@
 					'label',
 					'price',
 				), $product );
+
+				do_action( 'woocommerce_grouped_product_list_before', $grouped_product_columns, $quantites_required, $product );
 
 				foreach ( $grouped_products as $grouped_product_child ) {
 					$post_object        = get_post( $grouped_product_child->get_id() );
@@ -57,12 +59,15 @@
 								} else {
 									do_action( 'woocommerce_before_add_to_cart_quantity' );
 
-									woocommerce_quantity_input( array(
-										'input_name'  => 'quantity[' . $grouped_product_child->get_id() . ']',
-										'input_value' => isset( $_POST['quantity'][ $grouped_product_child->get_id() ] ) ? wc_stock_amount( wc_clean( wp_unslash( $_POST['quantity'][ $grouped_product_child->get_id() ] ) ) ) : 0, // WPCS: CSRF ok, input var okay, sanitization ok.
-										'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 0, $grouped_product_child ),
-										'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $grouped_product_child->get_max_purchase_quantity(), $grouped_product_child ),
-									) );
+									woocommerce_quantity_input(
+										array(
+											'input_name'  => 'quantity[' . $grouped_product_child->get_id() . ']',
+											'input_value' => isset( $_POST['quantity'][ $grouped_product_child->get_id() ] ) ? wc_stock_amount( wc_clean( wp_unslash( $_POST['quantity'][ $grouped_product_child->get_id() ] ) ) ) : '', // phpcs:ignore WordPress.Security.NonceVerification.Missing
+											'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 0, $grouped_product_child ),
+											'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $grouped_product_child->get_max_purchase_quantity(), $grouped_product_child ),
+											'placeholder' => '0',
+										)
+									);
 
 									do_action( 'woocommerce_after_add_to_cart_quantity' );
 								}
@@ -91,6 +96,8 @@
 				}
 				$post = $previous_post; // WPCS: override ok.
 				setup_postdata( $post );
+
+				do_action( 'woocommerce_grouped_product_list_after', $grouped_product_columns, $quantites_required, $product );
 			@endphp
 		</tbody>
 	</table>

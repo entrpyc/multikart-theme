@@ -14,7 +14,7 @@
  * @version 3.4.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php do_action( 'woocommerce_before_add_to_cart_form' )@endphp
 
