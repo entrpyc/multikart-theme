@@ -21,7 +21,7 @@
 	<thead>
 		<tr>
 			<th class="product-name">{{ __( 'Product', 'woocommerce' ) }}</th>
-			<th class="product-total">{{ __( 'Total', 'woocommerce' ) }}</th>
+			<th class="product-total">{{ __( 'Subtotal', 'woocommerce' ) }}</th>
 		</tr>
 	</thead>
 	<tbody>

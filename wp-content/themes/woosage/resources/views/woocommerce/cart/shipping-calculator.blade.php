@@ -11,10 +11,10 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 4.0.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php do_action( 'woocommerce_before_shipping_calculator' ) @endphp
 
@@ -27,7 +27,7 @@
 		@if ( apply_filters( 'woocommerce_shipping_calculator_enable_country', true ) )
 			<p class="form-row form-row-wide" id="calc_shipping_country_field">
 				<select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state country_select" rel="calc_shipping_state">
-					<option value="">{{ __( 'Select a country&hellip;', 'woocommerce' ) }}</option>
+					<option value="">{{ __( 'Select a country / region&hellip;', 'woocommerce' ) }}</option>
 					@foreach ( WC()->countries->get_shipping_countries() as $key => $value )
 						<option value="{{ $key }}" {!!  selected( WC()->customer->get_shipping_country(), esc_attr( $key ), false ) !!}>{{ $value }}</option>
 					@endforeach

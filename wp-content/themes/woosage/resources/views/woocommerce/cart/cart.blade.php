@@ -11,10 +11,10 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.8.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php do_action( 'woocommerce_before_cart' ) @endphp
 
@@ -29,7 +29,7 @@
 				<th class="product-name">{{  __( 'Product', 'woocommerce' ) }}</th>
 				<th class="product-price">{{  __( 'Price', 'woocommerce' ) }}</th>
 				<th class="product-quantity">{{  __( 'Quantity', 'woocommerce' ) }}</th>
-				<th class="product-subtotal">{{  __( 'Total', 'woocommerce' ) }}</th>
+				<th class="product-subtotal">{{  __( 'Subtotal', 'woocommerce' ) }}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -49,13 +49,17 @@
 					<tr class="woocommerce-cart-form__cart-item {{ esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ) }}">
 
 						<td class="product-remove">
-							{!! apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-									'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-									__( 'Remove this item', 'woocommerce' ),
-									esc_attr( $product_id ),
-									esc_attr( $_product->get_sku() )
-								), $cart_item_key )  !!}
+							{!! apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									'woocommerce_cart_item_remove_link',
+									sprintf(
+										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+										esc_html__( 'Remove this item', 'woocommerce' ),
+										esc_attr( $product_id ),
+										esc_attr( $_product->get_sku() )
+									),
+									$cart_item_key
+								)  !!}
 						</td>
 
 						<td class="product-thumbnail">
@@ -95,20 +99,24 @@
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 							} else {
-								$product_quantity = woocommerce_quantity_input( array(
-									'input_name'   => "cart[{$cart_item_key}][qty]",
-									'input_value'  => $cart_item['quantity'],
-									'max_value'    => $_product->get_max_purchase_quantity(),
-									'min_value'    => '0',
-									'product_name' => $_product->get_name(),
-								), $_product, false );
+								$product_quantity = woocommerce_quantity_input(
+									array(
+										'input_name'   => "cart[{$cart_item_key}][qty]",
+										'input_value'  => $cart_item['quantity'],
+										'max_value'    => $_product->get_max_purchase_quantity(),
+										'min_value'    => '0',
+										'product_name' => $_product->get_name(),
+									),
+									$_product,
+									false
+								);
 							}
 							@endphp
 
 						 	{!! apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ) !!}
 						</td>
 
-						<td class="product-subtotal" data-title="{{ esc_attr( 'Total', 'woocommerce' ) }}">
+						<td class="product-subtotal" data-title="{{ esc_attr( 'Subtotal', 'woocommerce' ) }}">
 							{!! apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) !!}
 						</td>
 					</tr>
@@ -140,6 +148,8 @@
 	</table>
 	@php do_action( 'woocommerce_after_cart_table' ) @endphp
 </form>
+
+@php do_action( 'woocommerce_before_cart_collaterals' ); @endphp
 
 <div class="cart-collaterals">
 	@php

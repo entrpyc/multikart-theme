@@ -13,10 +13,10 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.6.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
 $formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
@@ -49,21 +49,25 @@ $calculator_text          = '';
 					@php
 						if ( $formatted_destination ) {
 							// Translators: $s shipping destination.
-							printf( esc_html__( 'Estimate for %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' );
-							$calculator_text = __( 'Change address', 'woocommerce' );
+							printf( esc_html__( 'Shipping to %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' );
+							$calculator_text = esc_html__( 'Change address', 'woocommerce' );
 						} else {
-							echo esc_html__( 'This is only an estimate. Prices will be updated during checkout.', 'woocommerce' );
+							echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', __( 'Shipping options will be updated during checkout.', 'woocommerce' ) ) );
 						}
 					@endphp
 				</p>
 			@endif
 		@elseif ( ! $has_calculated_shipping || ! $formatted_destination )
-			{{ __( 'Enter your address to view shipping options.', 'woocommerce' )  }}
+			@if ( is_cart() && 'no' === get_option( 'woocommerce_enable_shipping_calc' ) )
+			{!! wp_kses_post( apply_filters( 'woocommerce_shipping_not_enabled_on_cart_html', __( 'Shipping costs are calculated during checkout.', 'woocommerce' ) ) )!!}
+			@else
+			{!! wp_kses_post( apply_filters( 'woocommerce_shipping_may_be_available_html', __( 'Enter your address to view shipping options.', 'woocommerce' ) ) ) !!}
+			@endif
 		@elseif ( ! is_cart() )
-			{!! wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) )  !!}
+                {!! wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) )  !!}
 		@else
 			{!! wp_kses_post( apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) ) )  !!}
-			@php $calculator_text = __( 'Enter a different address', 'woocommerce' ) @endphp
+			@php $calculator_text = esc_html__( 'Enter a different address', 'woocommerce' ) @endphp
 		@endif
 
 		@if ( $show_package_details )

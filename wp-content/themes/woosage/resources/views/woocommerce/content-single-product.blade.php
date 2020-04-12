@@ -11,10 +11,10 @@ The template for displaying product content in the single-product.php template
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.6.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php do_action( 'woocommerce_before_single_product' ); @endphp
 
@@ -27,7 +27,7 @@ The template for displaying product content in the single-product.php template
     global $product;
 @endphp
 
-<div id="product-{{ the_ID() }}" @php wc_product_class(); @endphp>
+<div id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
 
     @php
         /**

@@ -14,6 +14,8 @@ the readme will list any important changes.
 @version 3.4.0
 --}}
 
+@php defined( 'ABSPATH' ) || exit; @endphp
+
 @extends('layouts.app')
 
 @section('content')

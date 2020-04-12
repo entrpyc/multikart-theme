@@ -15,7 +15,7 @@
  * @version     2.3.6
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 <div class="cart_totals {{ ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : '' }}">
 
@@ -48,7 +48,7 @@
 		@elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) )
 
 			<tr class="shipping">
-				<th><?php _e( 'Shipping', 'woocommerce' ); ?></th>
+				<th>{{ __( 'Shipping', 'woocommerce' ) }}</th>
 				<td data-title="{{ esc_attr( 'Shipping', 'woocommerce' ) }}">@php woocommerce_shipping_calculator() @endphp</td>
 			</tr>
 
@@ -64,14 +64,16 @@
 		@if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() )
 			@php
 				$taxable_address = WC()->customer->get_taxable_address();
-				$estimated_text  = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
-						? sprintf( ' <small>' . __( '(estimated for %s)', 'woocommerce' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] )
-						: '';
+				$estimated_text  = '';
+				if ( WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping() ) {
+					/* translators: %s location. */
+					$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'woocommerce' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
+				}
 			@endphp
 
 			@if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) )
 				@foreach ( WC()->cart->get_tax_totals() as $code => $tax )
-					<tr class="tax-rate tax-rate-{{ sanitize_title( $code ) }}">
+					<tr class="tax-rate tax-rate-{{ esc_attr(sanitize_title( $code )) }}">
 						<th>{{ $tax->label }}{!! $estimated_text  !!}</th>
 						<td data-title="{{ esc_attr( $tax->label ) }}">{!! wp_kses_post( $tax->formatted_amount ) !!}</td>
 					</tr>

@@ -11,10 +11,10 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.6.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php
     global $product;
@@ -27,7 +27,7 @@
     $link = esc_url(apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product ));
 @endphp
 
-<li @php wc_product_class(); @endphp>
+<li @php wc_product_class('', $product); @endphp>
 
     @php
     /**

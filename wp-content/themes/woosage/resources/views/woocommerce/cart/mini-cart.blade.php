@@ -14,10 +14,10 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.7.0
 --}}
 
-@php if ( !defined( 'ABSPATH' ) ) { exit; } @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @php do_action( 'woocommerce_before_mini_cart' ) @endphp
 
@@ -46,7 +46,7 @@
 						{!! apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
 							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'woocommerce' ),
+							esc_attr__( 'Remove this item', 'woocommerce' ),
 							esc_attr( $product_id ),
 							esc_attr( $cart_item_key ),
 							esc_attr( $_product->get_sku() )
@@ -70,11 +70,22 @@
 		@endphp
 	</ul>
 
-	<p class="woocommerce-mini-cart__total total"><strong>{{ __( 'Subtotal', 'woocommerce' ) }}:</strong> {!! WC()->cart->get_cart_subtotal() !!}</p>
+	<p class="woocommerce-mini-cart__total total">
+        <?php
+        /**
+         * Hook: woocommerce_widget_shopping_cart_total.
+         *
+         * @hooked woocommerce_widget_shopping_cart_subtotal - 10
+         */
+         do_action( 'woocommerce_widget_shopping_cart_total' );
+        ?>
+	</p>
 
 	@php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ) @endphp
 
 	<p class="woocommerce-mini-cart__buttons buttons">@php do_action( 'woocommerce_widget_shopping_cart_buttons' ) @endphp</p>
+
+	@php do_action( 'woocommerce_widget_shopping_cart_after_buttons' ) @endphp
 
 @else
 
