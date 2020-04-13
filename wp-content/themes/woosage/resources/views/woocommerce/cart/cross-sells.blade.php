@@ -15,7 +15,7 @@
  * @version     3.0.0
 --}}
 
-@php defined( 'ABSPATH' ) || exit;} @endphp
+@php defined( 'ABSPATH' ) || exit; @endphp
 
 @if ( $cross_sells )
 
