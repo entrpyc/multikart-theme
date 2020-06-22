@@ -76,8 +76,12 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
-    "bootstrap": "v4.2.1",
+    "animate": "^1.0.0",
+    "animate.css": "^4.1.0",
+    "bootstrap": "^4.5.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.14.7",
+    "slick-carousel": "^1.8.1",
+    "themify-icons": "^1.0.0"
   }
 }

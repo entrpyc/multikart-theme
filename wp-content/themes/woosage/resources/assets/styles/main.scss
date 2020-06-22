@@ -1,8 +1,9 @@
-/* stylelint-disable selector-no-id, declaration-no-important, rule-empty-line-before */
+/* stylelint-disable */
 
 /** Import everything from autoload - bootstrap, etc... */
-@import "./autoload/**/*";
 @import "common/index";
-@import "components/index";
-@import "layouts/index";
+// @import "components/index";
+// @import "layouts/index";
 @import "pages/index";
+
+/* stylelint-enable */

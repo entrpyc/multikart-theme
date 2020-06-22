@@ -10,9 +10,4 @@ class SingleProduct extends Controller
     function __construct()
     {
     }
-
-    public function test()
-    {
-       // dd('Single Product Page');
-    }
 }

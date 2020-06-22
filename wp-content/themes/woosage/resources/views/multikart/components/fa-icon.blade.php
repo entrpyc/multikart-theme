@@ -1,0 +1,1 @@
+<li><a href="#"><i class="fa fa-{{ $i }}"></i></a></li>
