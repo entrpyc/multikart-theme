@@ -30,4 +30,35 @@ class App extends Controller
         }
         return get_the_title();
     }
+    public static function setIconList($exclude, $include) {
+        $icons = ['facebook', 'google-plus', 'twitter', 'instagram', 'rss'];
+        if($include) {
+          $icons = $include;
+        }
+        if($exclude) {
+          $icons = array_diff($icons, $exclude);
+        }
+          
+        return $icons;
+    }
+    public static function composeSlickSlides($images) {
+        $counter = 0;
+        $slick = '';
+        $nav = '';
+        foreach ($images as $image_url) {
+            $slick .= '<div><img src="'.$image_url.'" class="img-fluid blur-up lazyload image_zoom_cls-'.$counter++.'"></div>';
+            $nav .= '<div><img src="'.$image_url.'" class="img-fluid blur-up lazyload"></div>';
+        }
+
+        return array($slick, $nav);
+    }
+
+    // public static function composeNestedData($dataArray, $dataItem) {
+    //     $filteredArray;
+    //     foreach($dataArray as $item) {
+    //         array_push($filteredArray, $item[$dataItem]);
+    //     }
+
+    //     return $filteredArray;
+    // }
 }

@@ -1,5 +1,5 @@
 <!-- loader start -->
-<div class="loader_skeleton">
+{{-- <div class="loader_skeleton">
   <header>
       <div class="top-header d-none d-sm-block">
           <div class="container">
@@ -179,7 +179,7 @@
           </div>
       </div>
   </section>
-</div>
+</div> --}}
 
 <!-- header -->
 @include('multikart.layout.header')
@@ -188,18 +188,26 @@
 @include('multikart.layout.breadcrumb')
 
 <!-- product description -->
-@if($settings['page_type'])
-@include('multikart.product-single.sections.description-no-sidebar')
-@endif
+@include('multikart.product-single.sections.description', [
+    'display' => $settings['page_type'],
+    'gallery' => $description['gallery'],
+    'page_data' => $description['page_data'],
+    ]
+)
+
 
 <!-- product-tab -->
-@if($settings['tab'])
-@include('multikart.product-single.sections.tab')
+@if($tab)
+@include('multikart.product-single.sections.tab', [
+    'tabs' => $tab['tabs'],
+])
 @endif
 
 <!-- related products -->
-@if($settings['related_products'])
-@include('multikart.product-single.sections.related-products')
+@if($related_products)
+@include('multikart.product-single.sections.related-products', [
+    'products' => $related_products['products'],
+])
 @endif
 
 <!-- footer -->
@@ -207,6 +215,7 @@
 
 
 <!-- theme setting -->
+{{-- !DO NOT DELETE! --}}
 <div class="setting-contant">
     <ul class="color-box">
         <li>

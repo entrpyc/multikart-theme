@@ -6,6 +6,7 @@ import '../multikart/bootstrap';
 import '../multikart/bootstrap-notify.min';
 import '../multikart/jquery.elevatezoom';
 import '../multikart/script';
+
  
 export default {
   init() {

@@ -295,17 +295,21 @@ hr.style1 {
     background-color: $white;
 }
 
-.bg-light0 {
+.bg-light0,
+.bg-Green {
     background-color: $light-grey;
 }
 
-.bg-light1 {
+.bg-light1,
+.bg-Pink {
     background-color: $pink;
 }
 
-.bg-light2 {
+.bg-light2,
+.bg-Brown {
     background-color: $blue;
 }
+
 
 .bg-blog {
     background-color: $white-dark;

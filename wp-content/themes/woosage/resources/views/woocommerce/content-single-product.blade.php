@@ -83,7 +83,7 @@ The template for displaying product content in the single-product.php template
          *   do_action( 'woocommerce_after_single_product_summary' );
         */
 
-        wc_get_template( 'single-product/tabs/tabs.php' );
+        // wc_get_template( 'single-product/tabs/tabs.php' );
         woocommerce_upsell_display();
         woocommerce_output_related_products();
     @endphp
