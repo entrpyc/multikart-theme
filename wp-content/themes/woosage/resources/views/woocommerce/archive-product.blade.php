@@ -22,7 +22,7 @@ the readme will list any important changes.
     @php
         do_action('get_header', 'shop');
         wc_get_template( 'global/wrapper-start.php' ); //do_action('woocommerce_before_main_content');
-        woocommerce_breadcrumb(); //do_action('woocommerce_before_main_content');
+        //woocommerce_breadcrumb(); //do_action('woocommerce_before_main_content');
     @endphp
 
     <header class="woocommerce-products-header">

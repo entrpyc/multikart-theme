@@ -20,6 +20,7 @@ $sage_error = function ($message, $subtitle = '', $title = '') {
     wp_die($message, $title);
 };
 
+
 /**
  * Ensure compatible version of PHP is used
  */
@@ -59,6 +60,14 @@ array_map(function ($file) use ($sage_error) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
     }
 }, ['helpers', 'setup', 'filters', 'admin']);
+
+
+// Remove default editor for single product (woocommerce)
+
+function remove_product_editor() {
+    remove_post_type_support( 'product', 'editor' );
+}
+add_action( 'init', 'remove_product_editor' );
 
 /**
  * Here's what's happening with these hooks:

@@ -134,3 +134,31 @@
       </div>
   </div>
 </footer>
+
+<!-- tap to top start -->
+<div class="tap-top">
+    <div><i class="fa fa-angle-double-up"></i></div>
+</div>
+<!-- tap to top end -->
+
+<!-- theme setting -->
+{{-- !DO NOT DELETE! --}}
+<div class="setting-contant">
+    <ul class="color-box">
+        <li>
+            <input id="ColorPicker1" type="color" value="#ff4c3b" name="Background">
+            <span>theme deafult color</span>
+        </li>
+    </ul>
+</div>
+<!-- theme setting -->
+
+<script>
+    function openSearch() {
+        document.getElementById("search-overlay").style.display = "block";
+    }
+  
+    function closeSearch() {
+        document.getElementById("search-overlay").style.display = "none";
+    }
+</script>

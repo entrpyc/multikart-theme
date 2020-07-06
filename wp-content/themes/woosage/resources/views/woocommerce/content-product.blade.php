@@ -85,4 +85,5 @@
     @php wc_get_template( 'loop/price.php' ) @endphp
 
     @php woocommerce_template_loop_add_to_cart() // Add to cart button - loop/add-to-cart.php @endphp
+    
 </li>

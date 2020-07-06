@@ -59,7 +59,9 @@ The template for displaying product content in the single-product.php template
              *   do_action( 'woocommerce_single_product_summary' );
             */
 
-            wc_get_template( 'single-product/title.php' );
+            wc_get_template( 'single-product/title.php' , array(
+                'title' => get_the_title()
+            ));
             wc_get_template( 'single-product/rating.php' );
             wc_get_template( 'single-product/price.php' );
             wc_get_template( 'single-product/short-description.php' );
