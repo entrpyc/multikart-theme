@@ -1,4 +1,4 @@
-@include('multikart.product-single.page-template', [
+@include('boiler-load.product-single.page-template', [
   'settings' => [
     'page_type' => $data['page_type'],
   ],

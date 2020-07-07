@@ -19,7 +19,7 @@ $tabs = [
 // 'text_array' => App::composeNestedData($tabs, 'text'), // $param1 (target array), $param2 (target key)
 @endphp
 	@php do_action( 'woocommerce_checkout_before_order_review' ) @endphp
-@include('multikart.product-single.page-router', [
+@include('boiler-loader.product-single.page-router', [
   'settings' => [
     'page_type' => 'no-sidebar',
 

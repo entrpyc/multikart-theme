@@ -4,9 +4,9 @@
   <body @php body_class() @endphp>
    {{-- @php do_action('get_header') @endphp --}}
     {{-- @include('partials.header') --}}
-    @include('multikart.layout.header')
+    @include('boiler-loader.layout.header')
     {{-- breadcrumb --}}
-    @include('multikart.layout.breadcrumb', [
+    @include('boiler-loader.layout.breadcrumb', [
       'title' => get_the_title()
     ])
     <div class="wrap" role="document">
@@ -21,7 +21,7 @@
         @endif
       </div>
     </div>
-    @include('multikart.layout.footer')
+    @include('boiler-loader.layout.footer')
     @php do_action('get_footer') @endphp
     {{--@include('partials.footer') --}}
     @php wp_footer() @endphp

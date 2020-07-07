@@ -4,7 +4,7 @@
       <div class="row">
         {{-- gallery component --}}
         @if($gallery)
-          @include('multikart.product-single.router.gallery', [
+          @include('boiler-loader.product-single.router.gallery', [
             'images' => $gallery,
             'display' => $display,
           ])
@@ -45,7 +45,7 @@
             </div>
               {{-- sizes component --}}
               @if($page_data['sizes'])
-              @include('multikart.product-single.components.product-sizes', [
+              @include('boiler-loader.product-single.components.product-sizes', [
                 'sizes' => $page_data['sizes'],
                 ]
               )
@@ -53,12 +53,12 @@
 
               <h6 class="product-title">quantity</h6>
               {{-- quantity box component --}}
-              @include('multikart.product-single.components.quantity-box')
+              @include('boiler-loader.product-single.components.quantity-box')
             </div>
 
             <div class="product-buttons">
               {{-- button --}}
-              @include('multikart.components.button-solid', [
+              @include('boiler-loader.components.button-solid', [
                 'text' => 'ADD TO CART',
                 'href' => '#',
                 'modal' => [
@@ -68,7 +68,7 @@
               ])
 
               {{-- button --}}
-              @include('multikart.components.button-solid', [
+              @include('boiler-loader.components.button-solid', [
                 'text' => 'BUY NOW',
                 'href' => '#',
               ])
@@ -76,7 +76,7 @@
 
             {{-- title and text --}}
             @if($page_data['details'])
-              @include('multikart.product-single.components.title-text', [
+              @include('boiler-loader.product-single.components.title-text', [
                 'title' => 'Product Details',
                 'text' => $page_data['details'],
               ])
@@ -86,7 +86,7 @@
               <h6 class="product-title">share it</h6>
               <div class="product-icon">
                 {{-- list icons --}}
-                @include('multikart.product-single.components.social-icons', [
+                @include('boiler-loader.product-single.components.social-icons', [
                   'include' => [
                     'facebook',
                     'twitter',
@@ -94,13 +94,13 @@
                   ],
                 ])
                 {{-- add to wishlist component --}}
-                @include('multikart.product-single.components.add-to-wishlist')
+                @include('boiler-loader.product-single.components.add-to-wishlist')
               </div>
             </div>
             <div class="border-product">
               <h6 class="product-title">Time Reminder</h6>
               {{-- timer component --}}
-              @include('multikart.product-single.components.timer')
+              @include('boiler-loader.product-single.components.timer')
             </div>
           </div>
         </div>

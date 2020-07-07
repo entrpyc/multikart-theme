@@ -7,7 +7,7 @@
                   <div class="col-lg-6">
                       <div class="header-contact">
                           <ul>
-                              <li>Welcome to Our store Multikart</li>
+                              <li>Welcome to Our store boiler-loader</li>
                               <li><i class="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
                           </ul>
                       </div>
@@ -182,13 +182,13 @@
 </div> --}}
 
 <!-- header -->
-{{-- @include('multikart.layout.header') --}}
+{{-- @include('boiler-loader.layout.header') --}}
 
 <!-- breadcrumb -->
-{{-- @include('multikart.layout.breadcrumb') --}}
+{{-- @include('boiler-loader.layout.breadcrumb') --}}
 
 <!-- product description -->
-@include('multikart.product-single.sections.description', [
+@include('boiler-loader.product-single.sections.description', [
     'display' => $settings['page_type'],
     'gallery' => $description['gallery'],
     'page_data' => $description['page_data'],
@@ -198,22 +198,22 @@
 
 <!-- product-tab -->
 @if($tab)
-@include('multikart.product-single.sections.tab', [
+@include('boiler-loader.product-single.sections.tab', [
     'tabs' => $tab['tabs'],
 ])
 @endif
 
 <!-- related products -->
 @if($related_products)
-@include('multikart.product-single.sections.related-products', [
+@include('boiler-loader.product-single.sections.related-products', [
     'products' => $related_products['products'],
 ])
 @endif
 
 <!-- footer -->
-{{-- @include('multikart.layout.footer') --}}
+{{-- @include('boiler-loader.layout.footer') --}}
 
 
 <!-- Add to cart modal popup start-->
-@include('multikart.product-single.components.modal')
+@include('boiler-loader.product-single.components.modal')
 <!-- Add to cart modal popup end-->

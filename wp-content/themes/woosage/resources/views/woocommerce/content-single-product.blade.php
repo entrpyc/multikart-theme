@@ -95,3 +95,26 @@ The template for displaying product content in the single-product.php template
 @php do_action( 'woocommerce_after_single_product' ); @endphp
 
 
+
+{{-- @include('boiler-loader.product-single.page-template', [
+  'settings' => [
+    'page_type' => $data['page_type'],
+  ],
+  'description' => [
+    'gallery' => $data['description_gallery'],
+    'page_data' => [
+    'name' => $data['name'],
+    'publisher' => $data['publisher'],
+    'price' => $data['product_price']['value'],
+    'discount' => $data['product_price']['discount'],
+    'sizes' => $data['product_sizes'],
+    'details' => $data['product_details'],
+    ],
+  ],
+  'tab' => [
+    'tabs' => $data['product_tabs'],
+  ],
+  'related_products' => [
+    'products' => $data['related_products'],
+  ],
+]) --}}

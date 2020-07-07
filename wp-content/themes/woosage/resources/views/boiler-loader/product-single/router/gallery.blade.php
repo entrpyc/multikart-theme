@@ -2,7 +2,7 @@
 @php
     $slickSlides = App::composeSlickSlides($images);
 
-    $route = 'multikart.product-single.components.gallery.'.$display;
+    $route = 'boiler-loader.product-single.components.gallery.'.$display;
 @endphp
 
 @include($route, [
