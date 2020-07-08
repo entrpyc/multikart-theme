@@ -16,8 +16,8 @@
   'tab' => [
     'tabs' => $data['product_tabs'],
   ],
-  'related_products' => [
-    'products' => $data['related_products'],
+  'related-products' => [
+    'products' => 'woocommerce',
   ],
 ])
 

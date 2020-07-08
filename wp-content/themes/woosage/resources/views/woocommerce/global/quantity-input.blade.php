@@ -28,26 +28,30 @@
 	$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'woocommerce' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'woocommerce' );
 	@endphp
 
-	<div class="quantity">
+		{{-- @php do_action( 'woocommerce_before_quantity_input_field' ); @endphp --}}
 
-		@php do_action( 'woocommerce_before_quantity_input_field' ); @endphp
-
-		<label class="screen-reader-text" for="{{ esc_attr( $input_id ) }}">{{ esc_attr($label) }}</label>
-		<input
-			type="number"
-			id="{{ esc_attr( $input_id ) }}"
-			class="{{  esc_attr( join( ' ', (array) $classes ) ) }}"
-			step="{{ esc_attr( $step ) }}"
-			min="{{ esc_attr( $min_value ) }}"
-			max="{{ esc_attr( 0 < $max_value ? $max_value : '' ) }}"
-			name="{{ esc_attr( $input_name ) }}"
-			value="{{ esc_attr( $input_value ) }}"
-			title="{{ esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) }}"
-			size="4"
-			placeholder ="{{ esc_attr( $placeholder ) }}"
-			inputmode="{{ esc_attr( $inputmode ) }}" />
-
-		@php do_action( 'woocommerce_after_quantity_input_field' ); @endphp
-
-	</div>
+		<div class="qty-box mb15">
+			<div class="input-group"><span class="input-group-prepend"><button type="button"
+				class="btn quantity-left-minus" data-type="minus" data-field=""><i
+						class="ti-angle-left"></i></button> </span>
+					<label class="screen-reader-text" for="{{ esc_attr( $input_id ) }}">{{ esc_attr($label) }}</label>
+				<input class="form-control input-number" 
+				type="text"
+				id="{{ esc_attr( $input_id ) }}"
+				class="{{  esc_attr( join( ' ', (array) $classes ) ) }}"
+				step="{{ esc_attr( $step ) }}"
+				min="{{ esc_attr( $min_value ) }}"
+				max="{{ esc_attr( 0 < $max_value ? $max_value : '' ) }}"
+				name="{{ esc_attr( $input_name ) }}"
+				value="{{ esc_attr( $input_value ) }}"
+				title="{{ esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) }}"
+				size="4"
+				placeholder ="{{ esc_attr( $placeholder ) }}"
+				inputmode="{{ esc_attr( $inputmode ) }}">
+				<span class="input-group-prepend"><button type="button"
+				class="btn quantity-right-plus" data-type="plus" data-field=""><i
+						class="ti-angle-right"></i></button></span></div>
+	
+			{{-- @php do_action( 'woocommerce_after_quantity_input_field' ); @endphp --}}
+		</div>
 @endif

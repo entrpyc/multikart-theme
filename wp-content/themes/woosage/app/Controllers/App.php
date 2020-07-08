@@ -52,6 +52,17 @@ class App extends Controller
 
         return array($slick, $nav);
     }
+    public static function loadAdvancedOptions($section, $data) {
+        $options = [];
+        if($section == 'related-products') {
+            if($data['products'] == 'woocommerce') {
+                $options['section'] = 'boiler-loader.product-single.sections.related-products-woocommerce';
+                $options['data'] = [];
+            }
+        }
+
+        return $options;
+    }
 
     // public static function composeNestedData($dataArray, $dataItem) {
     //     $filteredArray;

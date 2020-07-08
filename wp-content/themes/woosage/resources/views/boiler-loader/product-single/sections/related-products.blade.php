@@ -37,11 +37,13 @@
                         <h6>{{$product['product_name']}}</h6>
                     </a>
                     <h4>${{$product['price']}}</h4>
+                    @if($product['colors'])
                     <ul class="color-variant">
                         @foreach($product['colors'] as $color)
                             <li class="bg-{{$color}}"></li>
                         @endforeach
                     </ul>
+                    @endif
                 </div>
             </div>
         </div>

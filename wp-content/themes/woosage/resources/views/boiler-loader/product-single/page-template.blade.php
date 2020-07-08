@@ -28,7 +28,27 @@ The template for displaying product content in the single-product.php template
 @endphp
 
 
-{{-- <div id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
+<div id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
+    @foreach ($sections as $name => $data)
+    @php 
+    $def_path = 'boiler-loader.product-single.sections.'.$name;
+    $components = [];
+    $components['settings'] = $settings;
+    $options = 0;
+    @endphp
+
+      @foreach ($data as $component => $value)
+      @php $components[$component] = $value; @endphp
+      @endforeach
+      @php $options = App::loadAdvancedOptions($name, $data); @endphp
+
+      @if(!$options)
+      @include($def_path, $components)
+      @else
+      @include($options['section'], $options['data'])
+      @endif
+
+    @endforeach
 
     @php
         /**
@@ -44,7 +64,7 @@ The template for displaying product content in the single-product.php template
         // wc_get_template( 'single-product/sale-flash.php' );
     @endphp
 
-    <div class="summary entry-summary">
+    {{--<div class="summary entry-summary">
         @php
             /**
              *   woocommerce_single_product_summary
@@ -61,17 +81,17 @@ The template for displaying product content in the single-product.php template
             */
 
             // wc_get_template( 'single-product/title.php');
-            wc_get_template( 'single-product/rating.php' );
+            // wc_get_template( 'single-product/rating.php' );
             // wc_get_template( 'single-product/price.php' );
-            wc_get_template( 'single-product/short-description.php' );
+            // wc_get_template( 'single-product/short-description.php' );
 
             do_action('woocommerce_' . $product->get_type() . '_add_to_cart');
 
-            wc_get_template( 'single-product/meta.php' );
-            wc_get_template( 'single-product/review-meta.php' );
-            wc_get_template( 'single-product/share.php' ); 
+            // wc_get_template( 'single-product/meta.php' );
+            // wc_get_template( 'single-product/review-meta.php' );
+            // wc_get_template( 'single-product/share.php' ); 
         @endphp
-    </div>
+    </div> --}}
 
     @php
         /**
@@ -86,42 +106,10 @@ The template for displaying product content in the single-product.php template
 
         // wc_get_template( 'single-product/tabs/tabs.php' );
         woocommerce_upsell_display();
-        woocommerce_output_related_products();
+        // woocommerce_output_related_products();
     @endphp
 
-</div> --}}
-
-
-@foreach ($sections as $name => $data)
-@php 
-$def_path = 'boiler-loader.product-single.sections.'.$name;
-$components = [];
-$components['settings'] = $settings;
-@endphp
-
-  @foreach ($data as $component => $value)
-
-  @php $components[$component] = $value; @endphp
-
-  @endforeach
-
-@include($def_path, $components)
-@endforeach
-
-
-{{-- product-tab --}}
-{{-- @if($tab)
-@include('boiler-loader.product-single.sections.tab', [
-    'tabs' => $tab['tabs'],
-])
-@endif --}}
-
-{{-- related products --}}
-{{-- @if($related_products)
-@include('boiler-loader.product-single.sections.related-products', [
-    'products' => $related_products['products'],
-])
-@endif --}}
+</div>
 
 
 {{-- Add to cart modal popup start --}}

@@ -19,7 +19,6 @@
 	}
 @endphp
 
-
 @include('boiler-loader.product-single.page-template', [
   'settings' => [
     'page_type' => $theme_settings['page_type'],
@@ -29,19 +28,18 @@
       'gallery' => $data['description_gallery'],
       'page_data' => [
         'name' => get_the_title(),
-        'publisher' => $data['publisher'],
         'price' => $product->get_regular_price(),
+        'sizes' => explode(', ', $product->get_attribute('size')),
         'currency' => get_woocommerce_currency_symbol(),
         'discount' => $product->get_sale_price(),
-        // 'sizes' => $data['product_sizes'],
         'details' => $short_description,
       ],
     ],
     'tab' => [
       'tabs' => $data['tabs'],
     ],
-    // 'related_products' => [
-    //   'products' => $data['related_products'],
-    // ],
+    'related-products' => [
+      'products' => 'woocommerce',
+    ],
   ]
 ])
