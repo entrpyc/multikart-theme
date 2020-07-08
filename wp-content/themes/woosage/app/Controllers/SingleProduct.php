@@ -15,18 +15,28 @@ class SingleProduct extends Controller
   {
     $data['id'] = get_the_ID();
 
-    $data['page_type'] = get_field('multikart_product_single_page_type', $data['id']);
+    $data['tabs'] = get_field('multikart_product_single_tabs', $data['id']);
+    $data['product_gallery'] = get_field('multikart_product_gallery', $data['id']);
 
+    $data['description_gallery'] = [];
+
+    if($data['product_gallery']) {
+  
+      foreach ($data['product_gallery'] as $image) {
+        array_push($data['description_gallery'], $image['url']);
+      }
+    }
+    
     return $data;
   }
-
+  
   // Tabs Section
-  public function tabs()
+  public function theme_settings()
   {
     $data['id'] = get_the_ID();
+    
+    $theme_settings['page_type'] = get_field('multikart_product_single_page_type', $data['id']);
 
-    $tabs = get_field('multikart_product_single_tabs', $data['id']);
-
-    return $tabs;
+    return $theme_settings;
   }
 }

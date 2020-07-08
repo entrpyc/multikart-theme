@@ -58,7 +58,7 @@
     1.General CSS start
 ==========================*/
 body {
-  font-family: Lato, sans-serif;
+  font-family: $main-font;
   position: relative;
   background: #ffffff;
   font-size: 14px; }
@@ -1156,7 +1156,7 @@ header {
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: Lato, sans-serif; }
+  font-family: $main-font; }
   .onhover-div img,
   .onhover-div i {
     cursor: pointer; }

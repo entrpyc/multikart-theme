@@ -19,4 +19,4 @@
 
 @php // the_title( '<h1 class="product_title entry-title">', '</h1>' ); @endphp
 
-<h2 class="product_title entry-title mb-0">{{ $title }}</h2>
+<h2 class="product_title entry-title mb-0">{{ get_the_title() }}</h2>

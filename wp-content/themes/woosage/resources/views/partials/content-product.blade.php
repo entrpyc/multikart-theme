@@ -1,13 +1,13 @@
-@include('boiler-load.product-single.page-template', [
+@include('boiler-loader.product-single.page-template', [
   'settings' => [
     'page_type' => $data['page_type'],
-  ],
-  'description' => [
+  ], 
+  'description' => [ // DOCS: https://shorturl.at/ilx68
     'gallery' => $data['description_gallery'],
     'page_data' => [
       'name' => $data['name'],
       'publisher' => $data['publisher'],
-      'price' => $data['product_price']['value'],
+      'price' => $product->get_price_html(),
       'discount' => $data['product_price']['discount'],
       'sizes' => $data['product_sizes'],
       'details' => $data['product_details'],

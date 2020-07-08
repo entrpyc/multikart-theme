@@ -1,7 +1,7 @@
 @import 'theme/variables';
-// $contour-color: #ff4c3b;
+
 :root {
-    --theme-deafult: #ff4c3b;
+    --theme-deafult: #{$main-color};
 }
 @import 'theme/style';
 @import 'theme/theme-dark';

@@ -1,219 +1,131 @@
-<!-- loader start -->
-{{-- <div class="loader_skeleton">
-  <header>
-      <div class="top-header d-none d-sm-block">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-6">
-                      <div class="header-contact">
-                          <ul>
-                              <li>Welcome to Our store boiler-loader</li>
-                              <li><i class="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="col-lg-6 text-right">
-                      <ul class="header-dropdown">
-                          <li class="mobile-wishlist"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                          </li>
-                          <li class="onhover-dropdown mobile-account">
-                              <i class="fa fa-user" aria-hidden="true"></i> My Account
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-12">
-                  <div class="main-menu">
-                      <div class="menu-left">
-                          <div class="navbar">
-                              <a href="javascript:void(0)">
-                                  <div class="bar-style"><i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="brand-logo">
-                              <a href="index.html"><img src="@asset('images/icon/logo.png')"
-                                      class="img-fluid blur-up lazyload" alt=""></a>
-                          </div>
-                      </div>
-                      <div class="menu-right pull-right">
-                          <div>
-                              <nav>
-                                  <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
-                                  <ul class="sm pixelstrap sm-horizontal">
-                                      <li>
-                                          <div class="mobile-back text-right">Back<i
-                                                  class="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
-                                      </li>
-                                      <li>
-                                          <a href="#">Home</a>
-                                      </li>
-                                      <li>
-                                          <a href="#">shop</a>
-                                      </li>
-                                      <li>
-                                          <a href="#">product</a>
-                                      </li>
-                                      <li class="mega"><a href="#">features
-                                              <div class="lable-nav">new</div>
-                                          </a>
-                                      </li>
-                                      <li><a href="#">pages</a>
-                                      </li>
-                                      <li>
-                                          <a href="#">blog</a>
-                                      </li>
-                                  </ul>
-                              </nav>
-                          </div>
-                          <div>
-                              <div class="icon-nav d-none d-sm-block">
-                                  <ul>
-                                      <li class="onhover-div mobile-search">
-                                          <div><img src="@asset('images/icon/search.png')" onclick="openSearch()"
-                                                  class="img-fluid blur-up lazyload" alt=""> <i class="ti-search"
-                                                  onclick="openSearch()"></i></div>
-                                      </li>
-                                      <li class="onhover-div mobile-setting">
-                                          <div><img src="@asset('images/icon/setting.png')"
-                                                  class="img-fluid blur-up lazyload" alt=""> <i
-                                                  class="ti-settings"></i></div>
-                                      </li>
-                                      <li class="onhover-div mobile-cart">
-                                          <div><img src="@asset('images/icon/cart.png')"
-                                                  class="img-fluid blur-up lazyload" alt=""> <i
-                                                  class="ti-shopping-cart"></i></div>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-  <div class="breadcrumb-section">
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-6">
-                  <div class="page-title">
-                      <h2>product</h2>
-                  </div>
-              </div>
-              <div class="col-sm-6">
-                  <nav aria-label="breadcrumb" class="theme-breadcrumb">
-                      <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">product</li>
-                      </ol>
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </div>
-  <section class="section-b-space ratio_asos">
-      <div class="collection-wrapper product-page">
-          <div class="container">
-              <div class="row">
-                  <div class="col-12">
-                      <div class="container-fluid">
-                          <div class="row">
-                              <div class="col-lg-6">
-                                  <div class="main-product lg-img"></div>
-                                  <div class="row">
-                                      <div class="col-4">
-                                          <div class="sm-product"></div>
-                                      </div>
-                                      <div class="col-4">
-                                          <div class="sm-product"></div>
-                                      </div>
-                                      <div class="col-4">
-                                          <div class="sm-product"></div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-6">
-                                  <div class="product-right">
-                                      <h2></h2>
-                                      <h4></h4>
-                                      <h3></h3>
-                                      <ul>
-                                          <li></li>
-                                          <li></li>
-                                          <li></li>
-                                          <li></li>
-                                          <li></li>
-                                      </ul>
-                                      <div class="btn-group">
-                                          <div class="btn-ldr"></div>
-                                          <div class="btn-ldr"></div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <section class="tab-product m-0">
-                          <div class="row">
-                              <div class="col-sm-12 col-lg-12">
-                                  <ul>
-                                      <li></li>
-                                      <li></li>
-                                      <li></li>
-                                      <li></li>
-                                  </ul>
-                                  <p></p>
-                                  <p></p>
-                                  <p></p>
-                                  <p></p>
-                                  <p></p>
-                              </div>
-                          </div>
-                      </section>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+{{--
+The template for displaying product content in the single-product.php template
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-single-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 3.6.0
+--}}
+
+@php defined( 'ABSPATH' ) || exit; @endphp
+
+@php do_action( 'woocommerce_before_single_product' ); @endphp
+
+@php
+    if ( post_password_required() ) {
+        echo get_the_password_form(); // WPCS: XSS ok.
+        return;
+    }
+
+    global $product;
+@endphp
+
+
+{{-- <div id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
+
+    @php
+        /**
+         *   woocommerce_before_single_product_summary
+         *   THE TEMPLATES HOOKED (+priority order number)  => corresponding template file name:
+         *   @hooked woocommerce_show_product_sale_flash     (10) => single-product/sale-flash.php
+         *   @hooked woocommerce_show_product_images      (20) => single-product/product-image.php
+         *
+         *   do_action( 'woocommerce_before_single_product_summary' );
+        */
+
+        // wc_get_template( 'single-product/product-image.php' );
+        // wc_get_template( 'single-product/sale-flash.php' );
+    @endphp
+
+    <div class="summary entry-summary">
+        @php
+            /**
+             *   woocommerce_single_product_summary
+             *   THE TEMPLATES HOOKED (+priority order number)  => corresponding template file name:
+             *   @hooked woocommerce_template_single_title       (5) => single-product/title.php
+             *   @hooked woocommerce_template_single_rating     (10) => single-product/rating.php
+             *   @hooked woocommerce_template_single_price      (10) => single-product/price.php
+             *   @hooked woocommerce_template_single_excerpt    (20) => single-product/short-description.php
+             *   @hooked woocommerce_template_single_add_to_cart(30) => single-product/add-to-cart/ (6 files depending on product type)
+             *   @hooked woocommerce_template_single_meta       (40) => single-product/review-meta.php
+             *   @hooked woocommerce_template_single_sharing    (50) => single-product/share.php
+             *
+             *   do_action( 'woocommerce_single_product_summary' );
+            */
+
+            // wc_get_template( 'single-product/title.php');
+            wc_get_template( 'single-product/rating.php' );
+            // wc_get_template( 'single-product/price.php' );
+            wc_get_template( 'single-product/short-description.php' );
+
+            do_action('woocommerce_' . $product->get_type() . '_add_to_cart');
+
+            wc_get_template( 'single-product/meta.php' );
+            wc_get_template( 'single-product/review-meta.php' );
+            wc_get_template( 'single-product/share.php' ); 
+        @endphp
+    </div>
+
+    @php
+        /**
+         *   woocommerce_after_single_product_summary
+         *   THE TEMPLATES HOOKED (+priority order number)  => corresponding template file name:
+         *   @hooked woocommerce_output_product_data_tabs     (10) => single-product/tabs/tabs.php
+         *   @hooked woocommerce_upsell_display               (15) => single-product/up-sells.php
+         *   @hooked woocommerce_output_related_products      (20) => single-product/related.php
+         *
+         *   do_action( 'woocommerce_after_single_product_summary' );
+        */
+
+        // wc_get_template( 'single-product/tabs/tabs.php' );
+        woocommerce_upsell_display();
+        woocommerce_output_related_products();
+    @endphp
+
 </div> --}}
 
-<!-- header -->
-{{-- @include('boiler-loader.layout.header') --}}
 
-<!-- breadcrumb -->
-{{-- @include('boiler-loader.layout.breadcrumb') --}}
+@foreach ($sections as $name => $data)
+@php 
+$def_path = 'boiler-loader.product-single.sections.'.$name;
+$components = [];
+$components['settings'] = $settings;
+@endphp
 
-<!-- product description -->
-@include('boiler-loader.product-single.sections.description', [
-    'display' => $settings['page_type'],
-    'gallery' => $description['gallery'],
-    'page_data' => $description['page_data'],
-    ]
-)
+  @foreach ($data as $component => $value)
+
+  @php $components[$component] = $value; @endphp
+
+  @endforeach
+
+@include($def_path, $components)
+@endforeach
 
 
-<!-- product-tab -->
-@if($tab)
+{{-- product-tab --}}
+{{-- @if($tab)
 @include('boiler-loader.product-single.sections.tab', [
     'tabs' => $tab['tabs'],
 ])
-@endif
+@endif --}}
 
-<!-- related products -->
-@if($related_products)
+{{-- related products --}}
+{{-- @if($related_products)
 @include('boiler-loader.product-single.sections.related-products', [
     'products' => $related_products['products'],
 ])
-@endif
-
-<!-- footer -->
-{{-- @include('boiler-loader.layout.footer') --}}
+@endif --}}
 
 
-<!-- Add to cart modal popup start-->
+{{-- Add to cart modal popup start --}}
 @include('boiler-loader.product-single.components.modal')
-<!-- Add to cart modal popup end-->
+{{-- Add to cart modal popup end  --}}
+
+@php do_action( 'woocommerce_after_single_product' ); @endphp
