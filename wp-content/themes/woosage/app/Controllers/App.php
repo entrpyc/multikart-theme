@@ -52,12 +52,27 @@ class App extends Controller
 
         return array($slick, $nav);
     }
-    public static function loadAdvancedOptions($section, $data) {
+    public static function loadAdvancedOptions($sections, $section, $data, $settings) {
         $options = [];
+
         if($section == 'related-products') {
             if($data['products'] == 'woocommerce') {
                 $options['section'] = 'boiler-loader.product-single.sections.related-products-woocommerce';
                 $options['data'] = [];
+            }
+        }
+
+        if($settings['page_type'] == 'left-sidebar') {
+            if($section == 'tab') {
+                $options['no-load'] = 1;
+            }
+            elseif($section == 'description') {
+                $options['section'] = 'boiler-loader.product-single.sections.description-left-sidebar';
+                $options['data'] = $data;
+                
+                if($sections['tab']) {
+                    $options['data']['tab'] = $sections['tab'];
+                }
             }
         }
 

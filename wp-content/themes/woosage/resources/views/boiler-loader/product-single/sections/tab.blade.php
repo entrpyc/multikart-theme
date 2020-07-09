@@ -1,6 +1,3 @@
-{{-- <pre>
-
-    @dump($tabs) --}}
 <section class="tab-product m-0">
   <div class="container">
       <div class="row">

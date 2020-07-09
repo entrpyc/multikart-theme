@@ -40,12 +40,14 @@ The template for displaying product content in the single-product.php template
       @foreach ($data as $component => $value)
       @php $components[$component] = $value; @endphp
       @endforeach
-      @php $options = App::loadAdvancedOptions($name, $data); @endphp
+      @php $options = App::loadAdvancedOptions($sections, $name, $data, $components['settings']); @endphp
 
       @if(!$options)
       @include($def_path, $components)
       @else
-      @include($options['section'], $options['data'])
+        @if(!$options['no-load'])
+        @include($options['section'], $options['data'])
+        @endif
       @endif
 
     @endforeach
