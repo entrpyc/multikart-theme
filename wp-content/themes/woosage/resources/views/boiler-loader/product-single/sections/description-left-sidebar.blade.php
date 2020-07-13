@@ -3,28 +3,18 @@
       <div class="container">
           <div class="row">
               <div class="col-sm-3 collection-filter">
-                  <div class="collection-filter-block">
-                      <div class="collection-mobile-back">
-                          <span class="filter-back">
-                              <i class="fa fa-angle-left" aria-hidden="true"></i>
-                              back
-                          </span>
-                      </div>
-                      <div class="collection-collapse-block border-0 open">
-                          <h3 class="collapse-block-title">brand</h3>
-                          <div class="collection-collapse-block-content">
-                              <div class="collection-brand-filter">
-                                  <ul class="category-list">
-                                      <li><a href="#">clothing</a></li>
-                                      <li><a href="#">bags</a></li>
-                                      <li><a href="#">footwear</a></li>
-                                      <li><a href="#">watches</a></li>
-                                      <li><a href="#">accessories</a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                  @include('boiler-loader.product-single.components.accordeon', [
+                      'tabs' => [
+                        'brand' => [
+                          'type' => 'link',
+                          'clothing' => '#',
+                          'bags' => '#',
+                          'footwear' => '#',
+                          'watches' => '#',
+                          'accessories' => '#',
+                        ],
+                      ],
+                    ])
                   <div class="collection-filter-block">
                       <div class="product-service">
                           <div class="media">
