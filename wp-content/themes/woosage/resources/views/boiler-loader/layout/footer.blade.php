@@ -1,4 +1,4 @@
-<footer class="footer-light">
+<footer class="footer-light">  {{-- add attribute [dark-ui-switch] to enable dark mode on all pages --}}
   <div class="light-layout">
       <div class="container">
           <section class="small-section border-section border-top-0">
@@ -135,12 +135,6 @@
   </div>
 </footer>
 
-<!-- tap to top start -->
-<div class="tap-top">
-    <div><i class="fa fa-angle-double-up"></i></div>
-</div>
-<!-- tap to top end -->
-
 <!-- theme setting -->
 {{-- !DO NOT DELETE! --}}
 <div class="setting-contant">
@@ -152,6 +146,12 @@
     </ul>
 </div>
 <!-- theme setting -->
+
+{{-- tap to top start --}}
+{{-- <div class="tap-top">
+    <div><i class="fa fa-angle-double-up"></i></div>
+</div> --}}
+{{-- tap to top end --}}
 
 <script>
     function openSearch() {

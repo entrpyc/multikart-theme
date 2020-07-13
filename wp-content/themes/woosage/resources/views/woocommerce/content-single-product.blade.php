@@ -22,6 +22,8 @@
 @include('boiler-loader.product-single.page-template', [
   'settings' => [
     'page_type' => $theme_settings['page_type'],
+    'scroll-to-top' => true,
+    // 'dark-ui' => true,
   ], 
   'sections' => [
     'description' => [ // DOCS: https://shorturl.at/ilx68

@@ -28,7 +28,7 @@ The template for displaying product content in the single-product.php template
 @endphp
 
 
-<div id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
+<div @if($settings['dark-ui']) dark-ui-switch @endif id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
     @foreach ($sections as $name => $data)
     @php 
     $def_path = 'boiler-loader.product-single.sections.'.$name;
@@ -117,5 +117,13 @@ The template for displaying product content in the single-product.php template
 {{-- Add to cart modal popup start --}}
 @include('boiler-loader.product-single.components.modal')
 {{-- Add to cart modal popup end  --}}
+
+{{-- tap to top start --}}
+@if($settings['scroll-to-top'])
+<div class="tap-top">
+    <div><i class="fa fa-angle-double-up"></i></div>
+</div>
+@endif
+{{-- tap to top end --}}
 
 @php do_action( 'woocommerce_after_single_product' ); @endphp
