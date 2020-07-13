@@ -36,7 +36,7 @@
           <ul>
             @foreach($data as $item => $content)
               @if($item != 'type')
-                <li class="color-{{$item}}" @if($content) active @endif></li>
+                <li class="color-{{$item}} @if($content) active @endif"></li>
               @endif
             @endforeach
           </ul>

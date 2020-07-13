@@ -11,8 +11,14 @@ class TaxonomyProduct_cat extends Controller
     {
     }
 
-    public function testTaxonomyPage()
+    public function data()
     {
-        //dd('Taxonomy Page - All Product categories ');
+
+        $category= get_queried_object();
+
+        $data['image_top'] = get_field('category_top_image', $category);
+        $data['image_sidebar'] = get_field('category_sidebar_image', $category);
+
+        return $data;
     }
 }
