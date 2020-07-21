@@ -1,6 +1,13 @@
-<!-- side-bar colleps block stat -->
+{{-- Data Format
+$tabs => [
+  $brand => [  --- Name of the tab
+    $type => link, --- Type of data
+    $item => data, ---  Items
+    $item => data, ---  Items
+  ]
+] --}}
+
 <div class="collection-filter-block">
-  <!-- brand filter start -->
   <div class="collection-mobile-back">
     <span class="filter-back">
       <i class="fa fa-angle-left" aria-hidden="true"></i> back
@@ -10,6 +17,7 @@
   <div class="collection-collapse-block open">
     <h3 class="collapse-block-title">{{$tab}}</h3>
     <div class="collection-collapse-block-content">
+        {{-- items with links --}}
         @if($data['type'] == 'link')
         <div class="collection-brand-filter">
             <ul class="category-list">
@@ -20,6 +28,7 @@
             @endforeach
             </ul>
         </div>
+        {{-- select boxes --}}
         @elseif($data['type'] == 'select')
         <div class="collection-brand-filter">
           @foreach($data as $item => $content)
@@ -31,6 +40,7 @@
               @endif
             @endforeach
         </div>
+        {{-- color select items --}}
         @elseif($data['type'] == 'color')
         <div class="color-selector">
           <ul>
@@ -46,7 +56,6 @@
     </div>
   @endforeach
 </div>
-<!-- silde-bar colleps block end here -->
 
 
 {{-- 'brand 2' => [

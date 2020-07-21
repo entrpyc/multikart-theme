@@ -27,7 +27,6 @@ The template for displaying product content in the single-product.php template
     global $product;
 @endphp
 
-
 <div @if($settings['dark-ui']) dark-ui-switch @endif id="product-{{ the_ID() }}" @php wc_product_class('', $product); @endphp>
     @foreach ($sections as $name => $data)
     @php 

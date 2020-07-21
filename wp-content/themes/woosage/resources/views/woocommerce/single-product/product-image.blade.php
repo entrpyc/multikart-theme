@@ -52,3 +52,4 @@
 		@endphp
 	</figure>
 </div>
+

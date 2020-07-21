@@ -37,15 +37,16 @@
                                 </div>
                                 @endforeach
                                 <div class="col-md-12">
-                                    <button class="btn btn-solid" type="submit">Submit YOur Review</button>
+                                    <button class="btn btn-solid" type="submit">Submit Your Review</button>
                                 </div>
                             </div>
                         </form>
                         @endif
 
                         @if($content['video_url'])
-                            <div class="mt-4 text-center">
-                                <iframe width="560" height="315" src="{{$content['video_url']}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                            </div>
+                        <div class="mt-4 text-center">
+                            <iframe width="560" height="315" src="{{$content['video_url']}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                         @elseif($content['upload_video'])
                         <div class="mt-4 text-center">
                             <video width="560" height="315" controls>

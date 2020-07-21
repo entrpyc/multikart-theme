@@ -1,0 +1,138 @@
+//style
+.collection-filter-block {
+  margin-bottom: 30px;
+  padding: 0 90px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+
+  .collection-mobile-back {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    display: none;
+
+    span {
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #000;
+      cursor: pointer;
+
+      i {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .collection-collapse-block {
+    padding-bottom: 24px;
+
+    &.open {
+      margin-bottom: 12px;
+    }
+
+    .collapse-block-title {
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #444;
+      font-weight: 600;
+      margin: 30px 0 0 0;
+
+      &::after {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: -3px;
+        content: "\f0d7";
+        font-family: "FontAwesome", sans-serif;
+        color: #444;
+      }
+    }
+
+    .collection-collapse-block-content .collection-brand-filter .category-list li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 18px;
+
+      &:first-child {
+        margin-top: 30px;
+      }
+
+      a {
+        color: #777;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+//admin
+.collection-filter-block {
+  margin-bottom: 30px;
+  padding: 0 30px;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+.collection-filter-block .product-service {
+  padding: 30px 0;
+}
+
+.collection-filter-block .product-service .media {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.collection-filter-block .product-service .media svg {
+  height: 40px;
+  width: 40px;
+}
+
+.collection-filter-block .product-service .media svg path {
+  fill: var(--theme-deafult);
+}
+
+.collection-filter-block .product-service .media .media-body {
+  padding-left: 10px;
+}
+
+.collection-filter-block .product-service .media .media-body h4 {
+  margin-bottom: 5px;
+}
+
+.collection-filter-block .product-service .media .media-body p {
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.collection-filter-block .product-service .media:last-child {
+  padding-bottom: 0;
+}
+
+
+//mobile
+@media (max-width: 1199px) {
+  .collection-filter-block {
+    .product-service {
+      .media {
+        .media-body {
+          h4 {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .collection-filter-block {
+    border: none;
+  }
+}
