@@ -1,4 +1,4 @@
-/* stylelint-disable selector-no-id, declaration-no-important, rule-empty-line-before */
+
 
 //grid
 $container: 1400px; // container max-width
@@ -77,7 +77,7 @@ $black: #000;
 
 // multikart settings
 $main-color: #992020;
-$main-font: 'Lato, sans-serif';
+$main-font: 'Lato, sans-serif', sans-serif;
 
 //fonts
 
@@ -189,19 +189,19 @@ $table-b-margin:             0px;
 $table-footer-font-weight:   bold;
 $table-inverse-color:        $white;
 $table-hover-color:          $light;
-$table-padding:              0.75rem;
-$table-xl-padding:           1.25rem 2rem;
+$table-padding:              12px;
+$table-xl-padding:           20px 32px;
 $table-xl-font:              120%;
-$table-lg-padding:           .9rem 2rem;
+$table-lg-padding:           14.4px 32px;
 $table-lg-font:              110%;
-$table-de-padding:           .75rem 2rem;
+$table-de-padding:           12px 32px;
 $table-de-font:              100%;
-$table-sm-padding:           .5rem 2rem;
+$table-sm-padding:           8px 32px;
 $table-sm-font:              90%;
-$table-xs-padding:           0.2rem 2rem;
+$table-xs-padding:           3.2px 32px;
 $table-xs-font:              80%;
 $horizontal-border-color:    #dee2e6;
-$horizontal-padding:         .75rem 2rem;
+$horizontal-padding:         12px 32px;
 $table-inverse-bg-color:     #292b2c;
 
 

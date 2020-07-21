@@ -11,6 +11,13 @@
 //   margin-right: -#{$container-padding};
 // }
 
+.container {
+  width: 100%;
+  max-width: $container;
+  padding: $container-padding;
+  margin: auto;
+}
+
 // Flex standard
 .flex {
   display: flex;

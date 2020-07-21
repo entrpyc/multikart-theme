@@ -9,8 +9,8 @@
     ]
   },
   "publicPath": "/wp-content/themes/woosage",
-  "devUrl": "http://multikart-theme.local/",
-  "proxyUrl": "http://localhost:3000",
+  "devUrl": "https://multikart-theme.local/vegetables",
+  "proxyUrl": "https://localhost:3001/vegetables",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "app/**/*.php",

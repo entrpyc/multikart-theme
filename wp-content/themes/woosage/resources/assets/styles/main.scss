@@ -1,9 +1,8 @@
-/* stylelint-disable */
 
-/** Import everything from autoload - bootstrap, etc... */
 @import "common/index";
-// @import "components/index";
-// @import "layouts/index";
+@import 'plugins/index';
+@import "layouts/index";
+@import './woosage/theme-loader';
+@import "blocks/index";
 @import "pages/index";
 
-/* stylelint-enable */
