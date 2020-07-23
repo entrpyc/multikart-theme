@@ -33,15 +33,18 @@ export default function header() {
     });
     
     if ($(window).width() < 1199) {
-        $('.sidebar-overlay').on('click', function() {
-            $('.header-2 #main-nav .toggle-nav').css('z-index', '99');
+        $('.main-nav-links .toggle-nav').on('click', function() {
+            $('#main-menu ').toggleClass('active')
+        });
+        $('header .mobile-back').on('click', function() {
+            $('#main-menu ').removeClass('active')
         });
     }
 
     /*=====================
     22. Menu js
     ==========================*/
-    	// default settings
+    // default settings
 	$.fn.smartmenus.defaults = {
 		isPopup:		false,		// is this a popup menu (can be shown via the popupShow/popupHide methods) or a permanent menu bar
 		mainMenuSubOffsetX:	0,		// pixels offset from default position

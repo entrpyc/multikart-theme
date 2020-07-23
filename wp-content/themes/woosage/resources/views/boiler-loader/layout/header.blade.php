@@ -197,7 +197,7 @@
                         <!-- Horizontal menu -->
                         <ul id="main-menu" class="nav-wrapper">
                             <li>
-                                <div class="mobile-back text-right">Back<i class="fa fa-angle-right pl-2"
+                                <div class="mobile-back">Back<i class="fa fa-angle-right pl-2"
                                         aria-hidden="true"></i></div>
                             </li>
                             <li>
@@ -414,7 +414,7 @@
                                                             <ul>
                                                                 <li class="up-text"><a
                                                                         href="element-productbox.html">product
-                                                                        box<span>10+</span></a></li>
+                                                                        box</a></li>
                                                                 <li><a href="element-product-slider.html">product
                                                                         slider</a></li>
                                                                 <li><a href="element-no_slider.html">no
