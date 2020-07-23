@@ -1,45 +1,38 @@
-<footer class="footer-light">  {{-- add attribute [dark-ui-switch] to enable dark mode on all pages --}}
-  <div class="light-layout">
-      <div class="container">
-          <section class="small-section border-section border-top-0">
-              <div class="row">
-                  <div class="col-lg-6">
-                      <div class="subscribe">
-                          <div>
-                              <h4>KNOW IT ALL FIRST!</h4>
-                              <p>Never Miss Anything From Multikart By Signing Up To Our Newsletter.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                      <form
-                          action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
-                          class="form-inline subscribe-form auth-form needs-validation" method="post"
-                          id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-                          <div class="form-group mx-sm-3">
-                              <input type="text" class="form-control" name="EMAIL" id="mce-EMAIL"
-                                  placeholder="Enter your email" required="required">
-                          </div>
-                          <button type="submit" class="btn btn-solid" id="mc-submit">subscribe</button>
-                      </form>
-                  </div>
-              </div>
-          </section>
-      </div>
-  </div>
+<footer> 
+    <div class="container">
+        <section class="small-section">
+            <div class="flex-row">
+                <div class="flex-col-2">
+                    <div class="subscribe">
+                        <h4>KNOW IT ALL FIRST!</h4>
+                        <p>Never Miss Anything From Multikart By Signing Up To Our Newsletter.</p>
+                    </div>
+                </div>
+                <div class="flex-col-2 flex ai-center">
+                    <form
+                        action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
+                        class="subscribe-form flex ai-center jc-end" method="post"
+                        id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                        <div class="flex-row">
+                            <input type="text" name="EMAIL" id="mce-EMAIL"
+                                placeholder="Enter your email" required="required">
+                        </div>
+                        <button type="submit" class="btn btn-solid" id="mc-submit">subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
   <section class="section-b-space light-layout">
       <div class="container">
-          <div class="row footer-theme partition-f">
-              <div class="col-lg-4 col-md-6">
-                  <div class="footer-title footer-mobile-title">
-                      <h4>about</h4>
-                  </div>
+          <div class="flex-row footer-nav-listing">
+              <div class="flex-col-4 flex jc-center ai-atart">
                   <div class="footer-contant">
                       <div class="footer-logo"><img src="@asset('images/icon/logo.png')" alt=""></div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                           ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
                       <div class="footer-social">
-                          <ul>
+                          <ul class="flex ai-center">
                               <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                               <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                               <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -49,39 +42,39 @@
                       </div>
                   </div>
               </div>
-              <div class="col offset-xl-1">
+              <div class="flex-col-4  flex jc-center ai-start">
                   <div class="sub-title">
                       <div class="footer-title">
                           <h4>my account</h4>
                       </div>
                       <div class="footer-contant">
                           <ul>
-                              <li><a href="#">mens</a></li>
-                              <li><a href="#">womens</a></li>
-                              <li><a href="#">clothing</a></li>
-                              <li><a href="#">accessories</a></li>
-                              <li><a href="#">featured</a></li>
+                              <li><a class="hover-link" href="#">mens</a></li>
+                              <li><a class="hover-link" href="#">womens</a></li>
+                              <li><a class="hover-link" href="#">clothing</a></li>
+                              <li><a class="hover-link" href="#">accessories</a></li>
+                              <li><a class="hover-link" href="#">featured</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
-              <div class="col">
+              <div class="flex-col-4  flex jc-center ai-start">
                   <div class="sub-title">
                       <div class="footer-title">
                           <h4>why we choose</h4>
                       </div>
                       <div class="footer-contant">
                           <ul>
-                              <li><a href="#">shipping & return</a></li>
-                              <li><a href="#">secure shopping</a></li>
-                              <li><a href="#">gallary</a></li>
-                              <li><a href="#">affiliates</a></li>
-                              <li><a href="#">contacts</a></li>
+                              <li><a class="hover-link" href="#">shipping & return</a></li>
+                              <li><a class="hover-link" href="#">secure shopping</a></li>
+                              <li><a class="hover-link" href="#">gallary</a></li>
+                              <li><a class="hover-link" href="#">affiliates</a></li>
+                              <li><a class="hover-link" href="#">contacts</a></li>
                           </ul>
                       </div>
                   </div>
               </div>
-              <div class="col">
+              <div class="flex-col-4  flex jc-center ai-start">
                   <div class="sub-title">
                       <div class="footer-title">
                           <h4>store information</h4>
