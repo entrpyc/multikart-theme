@@ -267,7 +267,7 @@ header {
         padding: 40px 45px 40px 0;
   
         i {
-          font-size: 28px;
+          font-size: 25px;
           color: $dark-font;
           cursor: pointer;
         }
@@ -738,6 +738,16 @@ header {
   }
 }
 
+a {
+  .sub-arrow {
+    &::before {
+      content: "\f107";
+      font-family: $font-awesome;
+      position: absolute;
+    }
+  }
+}
+
 // Responsive menu css start //
 @media (min-width: 1200px) {
   .toggle-nav {
@@ -817,16 +827,6 @@ header {
 
       .mega-box {
         max-width: 20%;
-      }
-    }
-
-    a {
-      .sub-arrow {
-        &::before {
-          content: "\f107";
-          font-family: $font-awesome;
-          position: absolute;
-        }
       }
     }
 

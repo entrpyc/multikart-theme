@@ -83,12 +83,6 @@
                                                             <li><a href="#">fashion jewellery</a></li>
                                                             <li><a href="#">caps and hats</a></li>
                                                             <li><a href="#">precious jewellery</a></li>
-                                                            <li><a href="#">necklaces</a></li>
-                                                            <li><a href="#">earrings</a></li>
-                                                            <li><a href="#">wrist wear</a></li>
-                                                            <li><a href="#">ties</a></li>
-                                                            <li><a href="#">cufflinks</a></li>
-                                                            <li><a href="#">pockets squares</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -106,14 +100,6 @@
                                         <li><a href="#">shopper bags</a></li>
                                         <li><a href="#">laptop bags</a></li>
                                         <li><a href="#">clutches</a></li>
-                                        <li><a href="#">purses</a>
-                                            <ul>
-                                                <li><a href="#">purses</a></li>
-                                                <li><a href="#">wallets</a></li>
-                                                <li><a href="#">leathers</a></li>
-                                                <li><a href="#">satchels</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#">footwear</a>
@@ -130,31 +116,6 @@
                                         <li><a href="#">fashion jewellery</a></li>
                                         <li><a href="#">caps and hats</a></li>
                                         <li><a href="#">precious jewellery</a></li>
-                                        <li><a href="#">more..</a>
-                                            <ul>
-                                                <li><a href="#">necklaces</a></li>
-                                                <li><a href="#">earrings</a></li>
-                                                <li><a href="#">wrist wear</a></li>
-                                                <li><a href="#">accessories</a>
-                                                    <ul>
-                                                        <li><a href="#">ties</a></li>
-                                                        <li><a href="#">cufflinks</a></li>
-                                                        <li><a href="#">pockets squares</a></li>
-                                                        <li><a href="#">helmets</a></li>
-                                                        <li><a href="#">scarves</a></li>
-                                                        <li><a href="#">more...</a>
-                                                            <ul>
-                                                                <li><a href="#">accessory gift sets</a></li>
-                                                                <li><a href="#">travel accessories</a></li>
-                                                                <li><a href="#">phone cases</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">belts & more</a></li>
-                                                <li><a href="#">wearable</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#">house of design</a>
@@ -165,14 +126,6 @@
                                         <li><a href="#">makeup</a></li>
                                         <li><a href="#">skincare</a></li>
                                         <li><a href="#">premium beaty</a></li>
-                                        <li><a href="#">more</a>
-                                            <ul>
-                                                <li><a href="#">fragrances</a></li>
-                                                <li><a href="#">luxury beauty</a></li>
-                                                <li><a href="#">hair care</a></li>
-                                                <li><a href="#">tools & brushes</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#">home & decor</a>

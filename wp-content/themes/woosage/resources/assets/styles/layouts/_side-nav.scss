@@ -8,11 +8,20 @@
   background-color: $white;
   transition: all 0.5s ease;
 
+  nav {
+    background-color: $white;
+    z-index: 9;
+    position: relative;
+    height: 100vh;
+    top: 0;
+    overflow-y: visible;
+  }
+
   .sidebar-back {
     padding: 20px;
     font-size: 18px;
     color: $dark-font;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     border-bottom: 1px solid $grey3;
     margin-bottom: 20px;
@@ -22,55 +31,21 @@
     }
   }
 
-  nav {
-    background-color: $white;
-    z-index: 9;
-    position: relative;
-    height: 100vh;
-    top: 0;
-    overflow-y: auto;
-  }
-
-  &.open-side {
-    left: 0;
-    transition: all 0.5s ease;
-
-    .sidebar-overlay {
-      opacity: 0.8;
-      visibility: visible;
-    }
-  }
-
-  .sidebar-overlay {
-    visibility: hidden;
-    opacity: 0;
-    background-color: #212331;
-    position: fixed;
-    z-index: 6;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -o-transition: all 1s;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-  }
-
-  .closebtn {
-    position: absolute;
-    top: 0;
-    font-size: 36px;
-    margin-left: 50px;
-    margin-top: 50px;
-    color: $grey-font;
-  }
-
   .nav-wrapper {
     li {
+      .sub-arrow {
+        right: 11px;
+        top: 10px;
+        left: unset;
+        transform: rotate(0deg);
+        margin: 0;
+      }
       ul {
         li {
           a {
-
+            font-size: 14px;
+            text-transform: capitalize;
+            margin-left: 0;
             &:hover,
             &:focus {
               padding: 5px 0px;
@@ -80,15 +55,35 @@
               right: 35px;
             }
           }
+          ul {
+            .sub-arrow {
+              right: 11px;
+              top: 10px;
+              left: unset;
+              transform: rotate(0deg);
+              margin: 0;
+            }
+          }
         }
       }
     }
     li {
+      width: 100%;
       a {
-        padding: 10px 50px 20px 40px;
+        padding: 10px 15px 20px 15px;
+        color: #222222;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
         .sub-arrow {
-          right: 7px;
+          right: 11px;
+          top: 10px;
           left: unset;
+          transform: rotate(-90deg);
+          margin: 0;
         }
       }
       ul {
@@ -141,30 +136,59 @@
     }
   }
 
-  @media (max-width: 1440px) {
-    left: -300px;
-  
-      &.open-side {
-        left: 0;
-      }
-  
-      .sidebar-back {
-        display: block;
-        color: black;
-        border-bottom: 1px dashed $round-border;
-      }
-  
-      .brand-logo {
-        display: none;
-      }
-  
-      .left-sidebar_center {
-        padding: 0 0 25px 25px;
-      }
+  .sm-nowrap {
+    top: 0 !important;
+    left: 100% !important;
+    padding: 15px 30px 25px !important;
+    background-color: #ffffff;
+
+    .sm-nowrap {
+      left: 52px !important;
+    }
+  }
+  .clothing-menu {
+    width: 815px !important;
+  }  
+
+  &.open-side {
+    left: 0;
+    transition: all 0.5s ease;
+
+    .sidebar-overlay {
+      opacity: 0.8;
+      visibility: visible;
+    }
+  }
+
+  .sidebar-overlay {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #212331;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: 50px;
+    color: $grey-font;
   }
 
   @media (max-width: 1199px) {
-    overflow-y: auto;
+
+    .clothing-menu {
+      width: 100% !important;
+    }  
   
     .nav-wrapper {
       li {
@@ -183,6 +207,7 @@
   
         a {
           padding: 10px 25px;
+          font-size: 15px;
   
           &:hover {
             padding: 10px 25px;
@@ -194,6 +219,7 @@
 }
 
 .mega-menu-banner {
+  display: none;
   &:hover {
     &:before {
       display: none;
@@ -222,16 +248,3 @@
     }
   }
 }
-
-.rtl {
-  .sidenav {
-    .nav-wrapper {
-      li {
-        text-align: right;
-      }
-    }
-  }
-}
-
-
-
