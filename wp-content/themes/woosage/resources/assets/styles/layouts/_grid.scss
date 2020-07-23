@@ -82,12 +82,12 @@
 
 
 // col grid
-.col-grid {
+.flex-row {
   display: flex;
   position: relative;
   width: 100%;
+  max-width: 100%;
   min-height: 1px;
-  display: flex;
 
   .sidebar {
     flex: 0 0 $sidebar-width;
@@ -101,15 +101,15 @@
     padding-left: $padding-xs;
     padding-right: $padding-xs;
   }
-  & > .col-1 {
+  & > .flex-col-1 {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  & > .col-2 {
-    flex: 0 0 100%;
-    max-width: 100%;
+  & > .flex-col-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
-  & > .col-3 {
+  & > .flex-col-3 {
     flex: 0 0 calc(100% / 3);
     max-width: calc(100% / 3);
 
@@ -118,7 +118,7 @@
       max-width: calc(100% - (100% / 3));
     }
   }
-  & > .col-4 {
+  & > .flex-col-4 {
     flex: 0 0 25%;
     max-width: 25%;
 
@@ -127,7 +127,7 @@
       max-width: 75%;
     }
   }
-  & > .col-5 {
+  & > .flex-col-5 {
     flex: 0 0 20%;
     max-width: 20%;
 
@@ -136,7 +136,7 @@
       max-width: 80%;
     }
   }
-  & > .col-6 {
+  & > .flex-col-6 {
     flex: 0 0 calc(100% - (100% / 6));
     max-width: calc(100% - (100% / 6));
   }

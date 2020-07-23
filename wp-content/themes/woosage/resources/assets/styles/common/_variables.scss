@@ -366,3 +366,16 @@ $sidebar-arrow-color: $theme-body-font-color;
 $sidebar-open-icon: "\f107";
 $sidebar-close-icon:"\f105";
 $sidebar-icon-font-family: $font-awesome;
+
+
+@mixin sub_items($amount, $chainable: 'ul ', $level: 4, $chain: '') {
+  @for $i from 1 through $level {
+    $chain: $chain + $chainable;
+    #{$chain} a,
+    #{$chain} a:hover,
+    #{$chain} a:focus,
+    #{$chain} a:active {
+      border-left: ($amount * ($i + 1)) solid transparent;
+    }
+  }
+}

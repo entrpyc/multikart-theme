@@ -27,47 +27,7 @@ body {
 }
 
 @media (max-width: 1430px) {
-    header {
-        &.left-header {
-            .top-header {
-                padding-left: 0;
-                .header-contact {
-                    display: none;
-                }
-            }
-            .sidenav {
-                left: -300px;
-                &.open-side {
-                    left: 0;
-                }
-                .sidebar-back {
-                    display: block;
-                    color: black;
-                    border-bottom: 1px dashed $round-border;
-                }
-                .brand-logo {
-                    display: none;
-                }
-                .left-sidebar_center {
-                    padding: 0 0 25px 25px;
-                }
-            }
-            .main-menu {
-                .menu-left {
-                    .navbar {
-                        display: block;
-                    }
-                    .mobile-logo {
-                        display: block;
-                        border: none;
-                    }
-                }
-            }
-            .search-overlay {
-                padding-left: 0;
-            }
-        }
-    }
+  
     .blog-section {
         .review-box {
             .review-content {
@@ -282,21 +242,7 @@ body {
                 }
             }
         }
-        header {
-            &.left-header {
-                .sidenav {
-                    right: -300px;
-                    left: unset;
-                    &.open-side {
-                        right: 0;
-                        left: unset;
-                    }
-                }
-                .top-header {
-                    padding-right: 0;
-                }
-            }
-        }
+ 
         .left-sidebar_space {
             padding-right: 0;
             padding-left: 0;

@@ -21,6 +21,11 @@ ul {
 a {
   display: inline-block;
   text-decoration: none;
+  position: relative;
+
+  &.disabled {
+    cursor: default;
+  }
 
   &:hover {
     text-decoration: none;
@@ -192,3 +197,31 @@ p {
     display: none;
   }
 }
+
+a {
+  display: block;
+  position: relative;
+}
+
+%default-style {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  direction: ltr;
+  text-align: left;
+}
+
+ul {
+  z-index: 1;
+  @extend %default-style;
+  ul {
+    display: none;
+  }
+  li {
+    @extend %default-style;
+    position: relative;
+  }  
+}
+
