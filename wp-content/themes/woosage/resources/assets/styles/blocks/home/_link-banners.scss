@@ -1,0 +1,46 @@
+.section {
+  &.section-home-banners {
+    padding-top: 70px;
+    .box {
+      position: relative;
+      flex: 0 1 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+      overflow: hidden;
+      .back {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+      }
+      &:hover {
+        .back {
+          transform: scale(1.1);
+        }
+      }
+
+      .save {
+        color: var(--theme-deafult);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0;
+        font-size: 18px;
+      }
+      .label {
+        font-size: 60px;
+        font-weight: 700;
+        color: #222222;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .content-wrapper {
+        position: relative;
+        padding: 114px 70px;
+      }
+    }
+  }
+}

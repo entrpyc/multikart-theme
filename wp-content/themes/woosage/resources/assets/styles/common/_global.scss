@@ -67,11 +67,10 @@ table {
 
 .main {
   overflow: hidden;
-  padding-top: 60px;
+}
 
-  @media screen and(max-width: 768px) {
-    padding-top: 50px;
-  }
+.section {
+  padding: 0;
 }
 
 input,

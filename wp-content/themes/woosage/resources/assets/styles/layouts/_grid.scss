@@ -19,7 +19,8 @@
 }
 
 // Flex standard
-.flex {
+.flex,
+.flex-row {
   display: flex;
   &.inline {
     display: inline-flex;
@@ -77,6 +78,28 @@
     @media screen and(max-width: 768px) {
       flex-direction: row;
     }
+  }
+}
+
+.grid-wrapper {
+  margin-left: -17.5px;
+  margin-right: -17.5px;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  flex: 0 1 calc(100% / 3);
+  max-width: calc(100% / 3);
+  width: 100%;
+  padding: 0 17.5px;
+  margin-bottom: 30px;
+
+  @media screen and(max-width: 768px) {
+    max-width: 50%;
+  }
+
+  @media screen and(max-width: 685px) {
+    max-width: 100%;
   }
 }
 
