@@ -60,6 +60,8 @@ footer {
     input {
       padding: 13px;
       width: 345px;
+      height: 50px;
+      background: $white;
       border-radius: 0;
       border: 1px solid $white-dark;
 
@@ -70,6 +72,9 @@ footer {
   }
 
   .footer-nav-listing {
+    .footer-content {
+      width: 100%;
+    }
     .footer-logo {
       margin-bottom: 18px;
     }
@@ -83,10 +88,15 @@ footer {
           font-size: 18px;
           letter-spacing: 0.03em;
           line-height: 1;
+
+          .according-menu {
+            display: none;
+          }
         }
       }
 
-      .footer-contant {
+      .footer-content {
+        width: 100%;
         ul {
           li {
             position: relative;
@@ -190,4 +200,80 @@ footer {
     }
   }
 
+  @media screen and(max-width: 1024px) {
+    .subscribe-form {
+      input {
+        width: 300px;
+      }
+    }
+    .footer-social {
+      li {
+        padding-right: 30px;
+      }
+    }
+  }
+
+  @media screen and(max-width: 768px) {
+    .small-section {
+      .subscribe {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        border: none;
+      }
+
+      .flex-row {
+        & > .flex-col-2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex: 0 1 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .flex-row {
+      & > .flex-col-4 {
+        flex: 0 1 50%;
+        max-width: 50%;
+        padding: 0 20px;
+        margin-bottom: 40px;
+        justify-content: start;
+      }
+    }
+  }
+
+  @media screen and(max-width: 767px) {
+    .subscribe-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        width: 200px;
+        height: 38px;
+      }
+    }
+    .flex-row {
+      & > .flex-col-4 {
+        flex: 0 1 100%;
+        max-width: 100%;
+        padding: 0px;
+        .sub-title {
+          width: 100%;
+        }
+      }
+    }
+    .sub-footer {
+      .flex-row {
+        & > .flex-col-2 {
+          flex: 0 1 100%;
+          max-width: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }

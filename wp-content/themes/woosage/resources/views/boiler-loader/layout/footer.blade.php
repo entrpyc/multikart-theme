@@ -1,14 +1,14 @@
 <footer> 
     <div class="container">
         <section class="small-section">
-            <div class="flex-row">
+            <div class="flex-row flex-wrap">
                 <div class="flex-col-2">
-                    <div class="subscribe">
+                    <div class="subscribe flex flex-column flex-wrap ai-start jc-start">
                         <h4>KNOW IT ALL FIRST!</h4>
                         <p>Never Miss Anything From Multikart By Signing Up To Our Newsletter.</p>
                     </div>
                 </div>
-                <div class="flex-col-2 flex ai-center">
+                <div class="flex-col-2 flex ai-center jc-end">
                     <form
                         action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
                         class="subscribe-form flex ai-center jc-end" method="post"
@@ -25,9 +25,9 @@
     </div>
   <section class="section-b-space light-layout">
       <div class="container">
-          <div class="flex-row footer-nav-listing">
+          <div class="flex-row footer-nav-listing flex-wrap">
               <div class="flex-col-4 flex jc-center ai-atart">
-                  <div class="footer-contant">
+                  <div class="footer-content">
                       <div class="footer-logo"><img src="@asset('images/icon/logo.png')" alt=""></div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                           ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
@@ -47,7 +47,7 @@
                       <div class="footer-title">
                           <h4>my account</h4>
                       </div>
-                      <div class="footer-contant">
+                      <div class="footer-content">
                           <ul>
                               <li><a class="hover-link" href="#">mens</a></li>
                               <li><a class="hover-link" href="#">womens</a></li>
@@ -63,7 +63,7 @@
                       <div class="footer-title">
                           <h4>why we choose</h4>
                       </div>
-                      <div class="footer-contant">
+                      <div class="footer-content">
                           <ul>
                               <li><a class="hover-link" href="#">shipping & return</a></li>
                               <li><a class="hover-link" href="#">secure shopping</a></li>
@@ -79,7 +79,7 @@
                       <div class="footer-title">
                           <h4>store information</h4>
                       </div>
-                      <div class="footer-contant">
+                      <div class="footer-content">
                           <ul class="contact-list">
                               <li><i class="fa fa-map-marker"></i>Multikart Demo Store, Demo store India 345-659
                               </li>
@@ -95,14 +95,14 @@
   </section>
   <div class="sub-footer">
       <div class="container">
-          <div class="row">
-              <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="flex-row flex-wrap">
+              <div class="flex-col-2">
                   <div class="footer-end">
                       <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017-18 themeforest powered by
                           pixelstrap</p>
                   </div>
               </div>
-              <div class="col-xl-6 col-md-6 col-sm-12">
+              <div class="flex-col-2 flex jc-end">
                   <div class="payment-card-bottom">
                       <ul>
                           <li>
