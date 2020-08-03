@@ -1,0 +1,22 @@
+.section {
+  &.section-brands-slider {
+    margin-bottom: 70px;
+
+    .brands-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    .box-image {
+      img {
+        filter: grayscale(100%);
+        transition: 0.5s ease-in-out;
+      }
+
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
+}

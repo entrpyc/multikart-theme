@@ -1,39 +1,51 @@
 .section {
   &.section-story-blog {
-    .heading {
-      padding-top: 70px;
-
-      h2 {
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-        position: relative;
-
-        &:after {
-          content: "";
-          position: absolute;
-          height: 5px;
-          width: 70px;
-          background-color: $third-color;
-          left: 0;
-          right: 0;
-          margin: 0 auto;
-          bottom: 0;
-        }
-      }
-
-      .h4 {
-        color: $third-color;
-        padding-bottom: 10px;
-        margin-bottom: 0;
-      }
-    }
+    margin-bottom: 70px;
 
     .related-stories {
       overflow: hidden;
       position: relative;
     }
     .post-box {
-      
+      .blog-details {
+        margin-top: 25px;
+        .date {
+          color: $third-color;
+          line-height: 1;
+          margin-bottom: 0;
+        }
+        .name {
+          color: #222222;
+          font-size: 18px;
+          text-transform: uppercase;
+          font-weight: 700;
+          line-height: 1.5;
+          letter-spacing: 0.03em;
+          margin-top: 10px;
+          transition: all 0.5s ease-in-out;
+          &:hover {
+            color: $third-color;
+          }
+        }
+        .line {
+          width: 75px;
+          height: 3px;
+          margin-top: 8px;
+          background-color: $third-color;
+          text-align: center;
+          margin-bottom: 16px;
+        }
+        .by {
+          line-height: 1;
+          margin-top: 0;
+          letter-spacing: 0.1em;
+          margin-bottom: 0;
+          font-size: 14px;
+          font-weight: 400;
+          color: $theme-body-sub-title-color;
+          text-transform: capitalize;
+        }
+      }
     }
   }
 }
