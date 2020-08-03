@@ -10,7 +10,7 @@
   },
   "publicPath": "/wp-content/themes/woosage",
   "devUrl": "https://multikart-theme.local/vegetables",
-  "proxyUrl": "https://localhost:3013/vegetables",
+  "proxyUrl": "https://localhost:3214/vegetables",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "app/**/*.php",

@@ -256,39 +256,23 @@
 
 <!-- Parallax banner -->
 <section class="section section-parallax">
-    <div class="back" style="background: {{$data['parallax']['image']}}">
-        {{-- <img src="{{$data['parallax']['image']}}" alt="back-image"> --}}
-    </div>
-    <div class="container">
-        <div class="content flex flex-column jc-start ai-start">
-            <div class="content-wrapper flex flex-column jc-center ai-center">
-                <h2>{{$data['parallax']['title']}}</h2>
-                {!!$data['parallax']['text']!!}
-            </div>
-        </div>
-    </div>
-</section>
-<section class="p-0">
-    <div class="full-banner parallax text-left p-left">
-        <img src="{{$data['parallax']['image']}}" alt="" class="bg-img blur-up lazyload">
+    <div class="back" style="background-image: url('{{$data['parallax']['image']}}')">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="banner-contain">
-                        <h2>{{$data['parallax']['title']}}</h2>
-                        {!!$data['parallax']['text']!!}
-                    </div>
+            <div class="content flex flex-column jc-start ai-start">
+                <div class="content-wrapper flex flex-column jc-center ai-start">
+                    <h2>{{$data['parallax']['title']}}</h2>
+                    {!!$data['parallax']['text']!!}
                 </div>
             </div>
         </div>
-    </div>
+    </div>   
 </section>
 <!-- Parallax banner end -->
 
 
 <!-- product-box slider -->
-<section class="section-b-space addtocart_count">
-    <div class="full-box">
+{{-- <section class="section-b-space addtocart_count"> --}}
+    {{-- <div class="full-box">
         <div class="container">
             <div class="title4">
                 <h2 class="title-inner4">special products</h2>
@@ -385,11 +369,43 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- product-box slider end -->
 
 
 <!-- blog section -->
+<section class="section section-story-blog">
+    <div class="container">
+        <div class="heading flex flex-column jc-center ai-center">
+            <h4>recent story</h4>
+            <h2>from the blog</h2>
+        </div>
+        <div class="related-stories">
+            <div class="swiper-wrapper">
+                @foreach($news->posts as $post)
+                <div class="swiper-slide">
+                    <div class="box post-box flex flex-column jc-center ai-center">
+                        <div class="image-wrapper box-effect">
+                            <a href="#">
+                                <img src="{{$post->image[0]}}" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-details flex flex-column jc-center ai-center">
+                            <h4>{{$post->date}}</h4>
+                            <a href="#">{{$post->post_name}}</a>
+                            <span class="line"></span>
+                            <p class="by flex ai-center jc-start">
+                                by: {{$post->author}} , @if($post->comment_count == 0) No @else {{$post->comment_count}} @endif @if($post->comment_count != 1) Comments @else Comment @endif
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section> 
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -433,3 +449,134 @@
     </div>
 </section>
 <!-- blog section end -->
+<section class="section section-instagram">
+    <div class="container">
+        <div class="heading">
+            <h2># instagram</h2>
+        </div>
+    </div>
+    <div class="inst-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box box-image">
+                    <div class="overlay-image">
+                        <img src="@asset('images/icons/inst-icon.png')" alt="">
+                    </div>
+                    <a href="#!">
+                        <img src="@asset('images/vegetables/instagram.jpg')" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-brands-slider">
+    <div class="container">
+        <div class="brands-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box box-image">
+                        <a href="#!">
+                            <img src="@asset('images/vegetables/brand.png')" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box box-image">
+                        <a href="#!">
+                            <img src="@asset('images/vegetables/brand.png')" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box box-image">
+                        <a href="#!">
+                            <img src="@asset('images/vegetables/brand.png')" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box box-image">
+                        <a href="#!">
+                            <img src="@asset('images/vegetables/brand.png')" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box box-image">
+                        <a href="#!">
+                            <img src="@asset('images/vegetables/brand.png')" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box box-image">
+                        <a href="#!">
+                            <img src="@asset('images/vegetables/brand.png')" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

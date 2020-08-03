@@ -9,6 +9,31 @@
     }
     .content {
       padding: 190px 0;
+      .content-wrapper {
+        h2 {
+          font-size: 100px;
+          font-weight: 700;
+          color: $third-color;
+          text-transform: uppercase;
+          margin-top: -15px;
+        }
+        h3 {
+          font-size: 60px;
+          color: $font-color;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        h4 {
+          font-size: 24px;
+          color: $grey;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5em;
+          padding-top: 10px;
+          margin-bottom: -5px;
+          line-height: 1.3;
+        }
+      }
     }
   }
 }
