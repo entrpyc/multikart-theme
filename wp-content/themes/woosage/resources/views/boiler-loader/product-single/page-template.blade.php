@@ -14,6 +14,9 @@ The template for displaying product content in the single-product.php template
  * @version 3.6.0
 --}}
 
+{{-- This is a part of the boiler-loader function
+Read more: https://woocommerce-theme.slite.com/app/channels/uRS0Z0vLqV/notes/WDWxWYUhgZ --}}
+
 @php defined( 'ABSPATH' ) || exit; @endphp
 
 @php do_action( 'woocommerce_before_single_product' ); @endphp
