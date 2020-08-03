@@ -19,14 +19,14 @@
 	}
 @endphp
 
-@include('boiler-loader.product-single.page-template', [
+@include('boiler-loader.product-single.page-template', [ // DOCS: https://woocommerce-theme.slite.com/app/channels/uRS0Z0vLqV/notes/n5EPGtfNyT
   'settings' => [
     'page_type' => $theme_settings['page_type'],
     'scroll-to-top' => true,
     // 'dark-ui' => true,
   ], 
   'sections' => [
-    'description' => [ // DOCS: https://shorturl.at/ilx68
+    'description' => [
       'gallery' => $data['description_gallery'],
       'page_data' => [
         'name' => get_the_title(),
