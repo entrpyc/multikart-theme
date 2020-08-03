@@ -213,4 +213,21 @@
       }
     }
   }
+  @media screen and(max-width: 768px) { 
+    .img-wrapper {
+      .front {
+        z-index: -1;
+      }
+      .back {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .cart-info {
+      .hover-animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
 }

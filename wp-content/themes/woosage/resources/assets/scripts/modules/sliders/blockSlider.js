@@ -11,7 +11,7 @@ export default function blockSlider() {
                 disableOnInteraction: false,
             },
             breakpoints: {
-                767: {
+                0: {
                     slidesPerView: 1,
                 },
                 768: {

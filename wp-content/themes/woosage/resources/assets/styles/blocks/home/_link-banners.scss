@@ -42,5 +42,39 @@
         padding: 114px 70px;
       }
     }
+
+    @media screen and(max-width: 1024px) {
+      .listing {
+        flex-wrap: wrap;
+      }
+      .box {
+        .content-wrapper {
+          padding: 70px;
+        }
+      }
+    }
+    @media screen and(max-width: 768px) {
+      .box {
+        flex: 0 1 100%;
+        max-width: 100%; 
+        .back {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }      
+        a {
+          display: flex;
+          justify-content: sta;
+          align-items: center;
+        }
+        .content-wrapper {
+          justify-content: flex-start;
+          padding: 70px 30px;
+        }
+        & + .box {
+          margin-top: 40px;
+        }
+      }
+    }
   }
 }

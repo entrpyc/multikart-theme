@@ -1,0 +1,96 @@
+.section {
+  &.section-exclusive-products-tabs {
+    .tab-nav {
+      margin-bottom: 30px;
+      .tab-box {
+        .cat-name {
+          cursor: pointer;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 1.5;
+          text-transform: uppercase;
+          transition: 0.5s ease-in-out;
+          color: #2d2a25;
+          &.current {
+            color: $third-color;
+          }
+        }
+        & + .tab-box {
+          margin-left: 50px;
+        }
+      }
+    }
+
+    .content-wrapper {
+      position: relative;
+
+      .single-content-result {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        margin-left: -15px;
+        margin-right: -15px;
+
+        .grid-item {
+          flex: 0 1 calc(100% / 4);
+          max-width: calc(100% / 4);
+          width: 100%;
+          padding: 0 15px;
+        }
+
+        .single-product-template {
+          margin-bottom: 30px;
+          transform: scale3d(0.3, 0.3, 0.3);
+          opacity: 0;
+          transition: 0.5s ease-in-out;
+        }
+
+        &.current {
+          position: relative;
+          z-index: 1;
+          visibility: visible;
+          .single-product-template {
+            transform: scale3d(1, 1, 1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    @media screen and(max-width: 768px) {
+      .content-wrapper {
+        .single-content-result {
+          margin: 0;
+          .grid-item {
+            flex: 0 1 calc(100% / 2);
+            max-width: calc(100% / 2);
+          }
+        }
+      }
+    }
+    @media screen and(max-width: 767px) {
+      .tab-nav {
+        flex-wrap: wrap;
+        .tab-box {
+          width: 100%;
+          & + .tab-box {
+            margin-left: 0;
+            margin-top: 30px;
+          }
+        }
+      }
+      .content-wrapper {
+        .single-content-result {
+          .grid-item {
+            flex: 0 1 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

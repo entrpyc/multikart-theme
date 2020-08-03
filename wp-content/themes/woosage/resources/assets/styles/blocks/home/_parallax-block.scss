@@ -35,5 +35,21 @@
         }
       }
     }
+
+    @media screen and(max-width: 1024px) {
+      .content {
+        padding: 120px 0;
+      }
+    }
+
+    @media screen and(max-width: 767px) {
+      .content {
+        .content-wrapper {
+          h3 {
+            line-height: 62px;
+          }
+        }
+      }
+    }
   }
 }
