@@ -1,0 +1,88 @@
+#tinymce {
+  margin: 10px;
+  background-color: $white;
+
+  h1 {
+    font-size: 2em;
+    color: $black;
+    margin-bottom: 1.5em
+  }
+
+  h2 {
+    font-size: 1.5em;
+    color: $black;
+    margin-bottom: 1.22em;
+  }
+
+  h3 {
+    font-size: 1.22em;
+    color: $black;
+    margin-bottom: 1.17em;
+  }
+
+  h4 {
+    font-size: 1.17em;
+    color: $black;
+    margin-bottom: 1em;
+  }
+
+  h5 {
+    font-size: 1em;
+    color: $black;
+    margin-bottom: 1em;
+  }
+
+  h6 {
+    font-size: 0.88em;
+    color: $black;
+    margin-bottom: 1em;
+  }
+
+  ul,
+  ul li {
+    list-style-type: circle !important;
+    margin-left: 20px;
+    padding-left: 0;
+    color: $black;
+    margin-bottom: 1em;
+  }
+
+  ol,
+  ol li {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 0;
+    color: $black;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: $black;
+  }
+
+  blockquote {
+    margin: 0 1.5em 1.5em 1.5em;
+    font-style: italic;
+    padding-left: 1em;
+    border-left: 3px solid gray;
+  }
+
+  img {
+    border: 0;
+    max-height: 400px;
+    width: auto;
+    margin: 2em 0;
+  }
+
+  table {
+    margin: 1.5em 0;
+    cursor: default;
+
+    td,
+    th {
+      cursor: text;
+    }
+  }
+}

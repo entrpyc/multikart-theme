@@ -1196,7 +1196,7 @@
 		markCurrentTree:	true,		// add the 'current' class also to the A elements of all ancestor items of the current item
 		rightToLeftSubMenus:	false,		// right to left display of the sub menus (check the CSS for the sub indicators' position)
 		bottomToTopSubMenus:	false,		// bottom to top display of the sub menus
-		collapsibleBehavior:	'default'	// parent items behavior in collapsible (mobile) view ('default', 'toggle', 'link', 'accordion', 'accordion-toggle', 'accordion-link')
+		collapsibleBehavior:	'default',  // parent items behavior in collapsible (mobile) view ('default', 'toggle', 'link', 'accordion', 'accordion-toggle', 'accordion-link')
 							// 'default' - first tap on parent item expands sub, second tap loads its link
 							// 'toggle' - the whole parent item acts just as a toggle button for its sub menu (expands/collapses on each tap)
 							// 'link' - the parent item acts as a regular item (first tap loads its link), the sub menu can be expanded only via the +/- button

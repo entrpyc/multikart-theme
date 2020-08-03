@@ -1,0 +1,249 @@
+.sidenav {
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: -300px;
+  background-color: $white;
+  transition: all 0.5s ease;
+
+  nav {
+    background-color: $white;
+    z-index: 9;
+    position: relative;
+    height: 100vh;
+    top: 0;
+    overflow-y: visible;
+  }
+
+  .sidebar-back {
+    padding: 20px;
+    font-size: 18px;
+    color: $dark-font;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid $grey3;
+    margin-bottom: 20px;
+    cursor: pointer;
+    i {
+      float: left;
+    }
+  }
+
+  .nav-wrapper {
+    li {
+      .sub-arrow {
+        right: 11px;
+        top: 10px;
+        left: unset;
+        transform: rotate(0deg);
+        margin: 0;
+      }
+      ul {
+        li {
+          a {
+            font-size: 14px;
+            text-transform: capitalize;
+            margin-left: 0;
+            &:hover,
+            &:focus {
+              padding: 5px 0px;
+            }
+
+            &:before {
+              right: 35px;
+            }
+          }
+          ul {
+            .sub-arrow {
+              right: 11px;
+              top: 10px;
+              left: unset;
+              transform: rotate(0deg);
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    li {
+      width: 100%;
+      a {
+        padding: 10px 15px 20px 15px;
+        color: #222222;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        .sub-arrow {
+          right: 11px;
+          top: 10px;
+          left: unset;
+          transform: rotate(-90deg);
+          margin: 0;
+        }
+      }
+      ul {
+        li {
+          a {
+            padding: 5px 0;
+
+            &:active,
+            &:focus,
+            &.highlighted {
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+      .clothing-menu {
+        li {
+          a {
+            padding: 5px 0 !important;
+
+            &:focus {
+              font-size: 14px;
+            }
+
+            &:hover {
+              font-size: 14px;
+              padding: 5px 0;
+            }
+
+            &:focus,
+            &:hover {
+              padding: 5px 0 !important;
+            }
+          }
+        }
+      }
+    }
+    .mega-menu {
+      li {
+        ul {
+          li {
+            a {
+              &:before {
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sm-nowrap {
+    top: 0 !important;
+    left: 100% !important;
+    padding: 15px 30px 25px !important;
+    background-color: #ffffff;
+
+    .sm-nowrap {
+      left: 52px !important;
+    }
+  }
+  .clothing-menu {
+    width: 815px !important;
+  }  
+
+  &.open-side {
+    left: 0;
+    transition: all 0.5s ease;
+
+    .sidebar-overlay {
+      opacity: 0.8;
+      visibility: visible;
+    }
+  }
+
+  .sidebar-overlay {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #212331;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: 50px;
+    color: $grey-font;
+  }
+
+  @media (max-width: 1199px) {
+
+    .clothing-menu {
+      width: 100% !important;
+    }  
+  
+    .nav-wrapper {
+      li {
+        ul {
+          li {
+            a {
+              padding: 5px 45px;
+  
+              &:hover,
+              &.highlighted {
+                padding: 5px 45px;
+              }
+            }
+          }
+        }
+  
+        a {
+          padding: 10px 25px;
+          font-size: 15px;
+  
+          &:hover {
+            padding: 10px 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mega-menu-banner {
+  display: none;
+  &:hover {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.clothing-menu {
+  padding: 15px 30px 25px !important;
+  background-color: $white;
+
+  li {
+    img {
+      padding: 20px 0 10px 0;
+    }
+  }
+
+  .link-section {
+    h5 {
+      margin-top: 15px;
+    }
+
+    ul {
+      background: none;
+    }
+  }
+}

@@ -84,29 +84,7 @@
 
 
 
-    /*=====================
-     04. Mega menu js
-     ==========================*/
-    if ($(window).width() > '1200') {
-        $('#hover-cls').hover(
-            function() {
-                $('.sm').addClass('hover-unset');
-            }
-        )
 
-    }
-    if ($(window).width() > '1200') {
-        $('#sub-menu > li').hover(
-            function() {
-                if ($(this).children().hasClass('has-submenu')) {
-                    $(this).parents().find('nav').addClass('sidebar-unset');
-                }
-            },
-            function() {
-                $(this).parents().find('nav').removeClass('sidebar-unset');
-            }
-        )
-    }
 
 
     /*=====================
@@ -163,15 +141,7 @@
     });
 
 
-    /*=====================
-     08. toggle nav
-     ==========================*/
-    $('.toggle-nav').on('click', function() {
-        $('.sm-horizontal').css("right", "0px");
-    });
-    $(".mobile-back").on('click', function() {
-        $('.sm-horizontal').css("right", "-410px");
-    });
+
 
 
     /*=====================
@@ -864,9 +834,6 @@
                 $('.header-2 #main-nav .toggle-nav').css('z-index', '1');
             }
         });
-        $('.sidebar-overlay').on('click', function() {
-            $('.header-2 #main-nav .toggle-nav').css('z-index', '99');
-        });
         $('.header-2 #search-overlay .closebtn').on('click', function() {
             $('.header-2 #main-nav .toggle-nav').css('z-index', '99');
         });
@@ -1252,23 +1219,23 @@ body_event.on("click", ".theme-layout-version", function() {
 /*=====================
  22. Menu js
  ==========================*/
-function openNav() {
-    document.getElementById("mySidenav").classList.add('open-side');
-}
+// function openNav() {
+//     document.getElementById("mySidenav").classList.add('open-side');
+// }
 
-function closeNav() {
-    document.getElementById("mySidenav").classList.remove('open-side');
-}
-$(function() {
-    $('#main-menu').smartmenus({
-        subMenusSubOffsetX: 1,
-        subMenusSubOffsetY: -8
-    });
-    $('#sub-menu').smartmenus({
-        subMenusSubOffsetX: 1,
-        subMenusSubOffsetY: -8
-    });
-});
+// function closeNav() {
+//     document.getElementById("mySidenav").classList.remove('open-side');
+// }
+// $(function() {
+//     $('#main-menu').smartmenus({
+//         subMenusSubOffsetX: 1,
+//         subMenusSubOffsetY: -8
+//     });
+//     $('#sub-menu').smartmenus({
+//         subMenusSubOffsetX: 1,
+//         subMenusSubOffsetY: -8
+//     });
+// });
 
 
 /*=====================
