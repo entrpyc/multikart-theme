@@ -15,6 +15,7 @@ export default function blockSlider() {
             breakpoints: {
                 0: {
                     slidesPerView: 2,
+                    spaceBetween: 0,
                 },
                 768: {
                     slidesPerView: 3,

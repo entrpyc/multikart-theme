@@ -1,0 +1,14 @@
+.section {
+  &.section-special-products-grid {
+    .listing-special-products {
+      .col {
+        flex: 0 1 25%;
+        max-width: 25%;
+        &.main-col {
+          flex: 0 1 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}

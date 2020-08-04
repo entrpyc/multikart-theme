@@ -22,7 +22,7 @@
       }
 
       .save {
-        color: var(--theme-deafult);
+        color: $third-color;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -73,6 +73,16 @@
         }
         & + .box {
           margin-top: 40px;
+        }
+      }
+    }
+    @media screen and(max-width: 767px) {
+      .box {
+        .save {
+          margin-bottom: 5px;
+        }
+        .label {
+          font-size: 50px;
         }
       }
     }

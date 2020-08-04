@@ -3,6 +3,8 @@ export default function heroSlider() {
     const sliderName = '.hero-slider';
     if($(sliderName).length > 0) {        
         var heroSlider = new Swiper(sliderName, {
+            loop: true,
+            slidesPerView: 1,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,

@@ -118,267 +118,79 @@
 <!-- Special Offer start -->
 <section class="section section-special-offer-slider">
     <div class="container">
-        <div class="heading base-heading flex flex-column jc-center ai-center">
-            <h4>Special Offer</h4>
-            <h2>TOP COLLECTION</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-        </div>
+        @include ('partials.content-section-heading', ['subtitle' => __('Special Offer', 'theme'), 'title' => __('TOP COLLECTION', 'theme'), 'text' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,', 'theme')])
         <div class="special-listing-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="box">
-                        <div class="single-product-template">
-                            <div class="wrapper">
-                                <div class="img-wrapper">
-                                    <a href="#!"></a>
-                                    <div class="front">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                    <div class="back">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                </div>
-                                <div class="lable-block flex ai-start jc-sb">
-                                    <p class="new">new</p>
-                                    <p class="sale">on sale</p>
-                                </div>
-                                <div class="cart-info">
-                                    <p class="hover-animate add-to-cart">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate add-to-wishlist">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate quick-view">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <div class="rating flex ai-center jc-start">
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star">
-                                        <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                    </div>
-                                </div>
-                                <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                                <div class="pricing flex flex-column ai-start jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <div class="price-sale flex ai-end jc-start">
-                                        <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                        <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                    </div>
-                                </div>
-                                <div class="color-variations">
-                                    <ul class="colors flex ai-center">
-                                        <li class="bg" style="background: #d0edff"></li>
-                                        <li class="bg" style="background: #f1e7e6"></li>
-                                        <li class="bg" style="background: #bfbfbf"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <div class="single-product-template">
-                            <div class="wrapper">
-                                <div class="img-wrapper">
-                                    <a href="#!"></a>
-                                    <div class="front">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                    <div class="back">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                </div>
-                                <div class="lable-block flex ai-start jc-sb">
-                                    <p class="new">new</p>
-                                    <p class="sale">on sale</p>
-                                </div>
-                                <div class="cart-info">
-                                    <p class="hover-animate add-to-cart">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate add-to-wishlist">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate quick-view">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <div class="rating flex ai-center jc-start">
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star">
-                                        <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                    </div>
-                                </div>
-                                <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                                <div class="pricing flex flex-column ai-start jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <div class="price-sale flex ai-end jc-start">
-                                        <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                        <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                    </div>
-                                </div>
-                                <div class="color-variations">
-                                    <ul class="colors flex ai-center">
-                                        <li class="bg" style="background: #d0edff"></li>
-                                        <li class="bg" style="background: #f1e7e6"></li>
-                                        <li class="bg" style="background: #bfbfbf"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <div class="single-product-template">
-                            <div class="wrapper">
-                                <div class="img-wrapper">
-                                    <a href="#!"></a>
-                                    <div class="front">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                    <div class="back">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                </div>
-                                <div class="lable-block flex ai-start jc-sb">
-                                    <p class="new">new</p>
-                                    <p class="sale">on sale</p>
-                                </div>
-                                <div class="cart-info">
-                                    <p class="hover-animate add-to-cart">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate add-to-wishlist">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate quick-view">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <div class="rating flex ai-center jc-start">
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star">
-                                        <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                    </div>
-                                </div>
-                                <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                                <div class="pricing flex flex-column ai-start jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <div class="price-sale flex ai-end jc-start">
-                                        <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                        <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                    </div>
-                                </div>
-                                <div class="color-variations">
-                                    <ul class="colors flex ai-center">
-                                        <li class="bg" style="background: #d0edff"></li>
-                                        <li class="bg" style="background: #f1e7e6"></li>
-                                        <li class="bg" style="background: #bfbfbf"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <div class="single-product-template">
-                            <div class="wrapper">
-                                <div class="img-wrapper">
-                                    <a href="#!"></a>
-                                    <div class="front">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                    <div class="back">
-                                        <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                    </div>
-                                </div>
-                                <div class="lable-block flex ai-start jc-sb">
-                                    <p class="new">new</p>
-                                    <p class="sale">on sale</p>
-                                </div>
-                                <div class="cart-info">
-                                    <p class="hover-animate add-to-cart">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate add-to-wishlist">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                    <p class="hover-animate quick-view">
-                                        <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <div class="rating flex ai-center jc-start">
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div><div class="star fill">
-                                        <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                    </div>
-                                    <div class="star">
-                                        <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                    </div>
-                                </div>
-                                <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                                <div class="pricing flex flex-column ai-start jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <div class="price-sale flex ai-end jc-start">
-                                        <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                        <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                    </div>
-                                </div>
-                                <div class="color-variations">
-                                    <ul class="colors flex ai-center">
-                                        <li class="bg" style="background: #d0edff"></li>
-                                        <li class="bg" style="background: #f1e7e6"></li>
-                                        <li class="bg" style="background: #bfbfbf"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
                     </div>
                 </div>
             </div>
@@ -389,10 +201,7 @@
 <!-- blog section start-->
 <section class="section section-story-blog">
     <div class="container">
-        <div class="heading base-heading flex flex-column jc-center ai-center">
-            <h4>recent story</h4>
-            <h2>from the blog</h2>
-        </div>
+        @include ('partials.content-section-heading', ['subtitle' => __('recent story', 'theme'), 'title' => __('from the blog', 'theme')])
         <div class="related-stories">
             <div class="swiper-wrapper">
                 @foreach($news->posts as $post)
@@ -422,9 +231,7 @@
 <!-- section-instagram start-->
 <section class="section section-instagram">
     <div class="container">
-        <div class="heading flex jc-center ai-center">
-            <h2># instagram</h2>
-        </div>
+        @include ('partials.content-section-heading', ['title' => __('# instagram', 'theme')])
     </div>
     <div class="inst-slider">
         <div class="swiper-wrapper">
@@ -561,10 +368,7 @@
 <!-- Exclusive Products start -->
 <section class="section section-exclusive-products-tabs">
     <div class="container">
-        <div class="heading base-heading flex flex-column jc-center ai-center">
-            <h4>Exclusive Products</h4>
-            <h2>SPECIAL PRODUCTS</h2>
-        </div>
+        @include ('partials.content-section-heading', ['subtitle' => __('Exclusive Products', 'theme'), 'title' => __('SPECIAL PRODUCTS', 'theme')])
         <div class="tab-nav flex ai-center jc-center">
             <div class="tab-box">
                 <h3 class="cat-name current" data-id='new'>NEW PRODUCTS</h3>
@@ -579,383 +383,274 @@
         <div class="content-wrapper">
             <div class="single-content-result flex fkex-wrap grid-wrapper  current" data-id="new">
                 <div class="grid-item">
-                    <div class="single-product-template">
-                        <div class="wrapper">
-                            <div class="img-wrapper">
-                                <a href="#!"></a>
-                                <div class="front">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                                <div class="back">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                            </div>
-                            <div class="lable-block flex ai-start jc-sb">
-                                <p class="new">new</p>
-                                <p class="sale">on sale</p>
-                            </div>
-                            <div class="cart-info">
-                                <p class="hover-animate add-to-cart">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate add-to-wishlist">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate quick-view">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product-detail">
-                            <div class="rating flex ai-center jc-start">
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star">
-                                    <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                </div>
-                            </div>
-                            <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                            <div class="pricing flex flex-column ai-start jc-start">
-                                <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                <div class="price-sale flex ai-end jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                </div>
-                            </div>
-                            <div class="color-variations">
-                                <ul class="colors flex ai-center">
-                                    <li class="bg" style="background: #d0edff"></li>
-                                    <li class="bg" style="background: #f1e7e6"></li>
-                                    <li class="bg" style="background: #bfbfbf"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @include ('partials.content-single-product-template',
+                    [
+                        'product_link' => __('some link', 'theme'),
+                        'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'new_product' => __('true', 'theme'),
+                        'on_sale' => __('true', 'theme'),
+                        'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                        'price_value' => __('500', 'theme'),
+                        'price_sale_value' => __('600', 'theme'),
+                        'color_variation_1' => __('#d0edff', 'theme'),
+                        'color_variation_2' => __('#f1e7e6', 'theme'),
+                        'color_variation_3' => __('#bfbfbf', 'theme'),
+                    ])
                 </div>
             </div>
             <div class="single-content-result flex fkex-wrap grid-wrapper" data-id="featured">
                 <div class="grid-item">
-                    <div class="single-product-template">
-                        <div class="wrapper">
-                            <div class="img-wrapper">
-                                <a href="#!"></a>
-                                <div class="front">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                                <div class="back">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                            </div>
-                            <div class="lable-block flex ai-start jc-sb">
-                                <p class="new">new</p>
-                                <p class="sale">on sale</p>
-                            </div>
-                            <div class="cart-info">
-                                <p class="hover-animate add-to-cart">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate add-to-wishlist">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate quick-view">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product-detail">
-                            <div class="rating flex ai-center jc-start">
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star">
-                                    <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                </div>
-                            </div>
-                            <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                            <div class="pricing flex flex-column ai-start jc-start">
-                                <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                <div class="price-sale flex ai-end jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                </div>
-                            </div>
-                            <div class="color-variations">
-                                <ul class="colors flex ai-center">
-                                    <li class="bg" style="background: #d0edff"></li>
-                                    <li class="bg" style="background: #f1e7e6"></li>
-                                    <li class="bg" style="background: #bfbfbf"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @include ('partials.content-single-product-template',
+                    [
+                        'product_link' => __('some link', 'theme'),
+                        'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'new_product' => __('true', 'theme'),
+                        'on_sale' => __('true', 'theme'),
+                        'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                        'price_value' => __('500', 'theme'),
+                        'price_sale_value' => __('600', 'theme'),
+                        'color_variation_1' => __('#d0edff', 'theme'),
+                        'color_variation_2' => __('#f1e7e6', 'theme'),
+                        'color_variation_3' => __('#bfbfbf', 'theme'),
+                    ])
                 </div>
                 <div class="grid-item">
-                    <div class="single-product-template">
-                        <div class="wrapper">
-                            <div class="img-wrapper">
-                                <a href="#!"></a>
-                                <div class="front">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                                <div class="back">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                            </div>
-                            <div class="lable-block flex ai-start jc-sb">
-                                <p class="new">new</p>
-                                <p class="sale">on sale</p>
-                            </div>
-                            <div class="cart-info">
-                                <p class="hover-animate add-to-cart">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate add-to-wishlist">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate quick-view">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product-detail">
-                            <div class="rating flex ai-center jc-start">
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star">
-                                    <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                </div>
-                            </div>
-                            <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                            <div class="pricing flex flex-column ai-start jc-start">
-                                <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                <div class="price-sale flex ai-end jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                </div>
-                            </div>
-                            <div class="color-variations">
-                                <ul class="colors flex ai-center">
-                                    <li class="bg" style="background: #d0edff"></li>
-                                    <li class="bg" style="background: #f1e7e6"></li>
-                                    <li class="bg" style="background: #bfbfbf"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @include ('partials.content-single-product-template',
+                    [
+                        'product_link' => __('some link', 'theme'),
+                        'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'new_product' => __('true', 'theme'),
+                        'on_sale' => __('true', 'theme'),
+                        'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                        'price_value' => __('500', 'theme'),
+                        'price_sale_value' => __('600', 'theme'),
+                        'color_variation_1' => __('#d0edff', 'theme'),
+                        'color_variation_2' => __('#f1e7e6', 'theme'),
+                        'color_variation_3' => __('#bfbfbf', 'theme'),
+                    ])
                 </div>
             </div>
             <div class="single-content-result flex fkex-wrap grid-wrapper" data-id="best">
                 <div class="grid-item">
-                    <div class="single-product-template">
-                        <div class="wrapper">
-                            <div class="img-wrapper">
-                                <a href="#!"></a>
-                                <div class="front">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                                <div class="back">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                            </div>
-                            <div class="lable-block flex ai-start jc-sb">
-                                <p class="new">new</p>
-                                <p class="sale">on sale</p>
-                            </div>
-                            <div class="cart-info">
-                                <p class="hover-animate add-to-cart">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate add-to-wishlist">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate quick-view">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product-detail">
-                            <div class="rating flex ai-center jc-start">
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star">
-                                    <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                </div>
-                            </div>
-                            <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                            <div class="pricing flex flex-column ai-start jc-start">
-                                <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                <div class="price-sale flex ai-end jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                </div>
-                            </div>
-                            <div class="color-variations">
-                                <ul class="colors flex ai-center">
-                                    <li class="bg" style="background: #d0edff"></li>
-                                    <li class="bg" style="background: #f1e7e6"></li>
-                                    <li class="bg" style="background: #bfbfbf"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
                 </div>
                 <div class="grid-item">
-                    <div class="single-product-template">
-                        <div class="wrapper">
-                            <div class="img-wrapper">
-                                <a href="#!"></a>
-                                <div class="front">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                                <div class="back">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                            </div>
-                            <div class="lable-block flex ai-start jc-sb">
-                                <p class="new">new</p>
-                                <p class="sale">on sale</p>
-                            </div>
-                            <div class="cart-info">
-                                <p class="hover-animate add-to-cart">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate add-to-wishlist">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate quick-view">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product-detail">
-                            <div class="rating flex ai-center jc-start">
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star">
-                                    <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                </div>
-                            </div>
-                            <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                            <div class="pricing flex flex-column ai-start jc-start">
-                                <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                <div class="price-sale flex ai-end jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                </div>
-                            </div>
-                            <div class="color-variations">
-                                <ul class="colors flex ai-center">
-                                    <li class="bg" style="background: #d0edff"></li>
-                                    <li class="bg" style="background: #f1e7e6"></li>
-                                    <li class="bg" style="background: #bfbfbf"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @include ('partials.content-single-product-template',
+                    [
+                        'product_link' => __('some link', 'theme'),
+                        'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'new_product' => __('true', 'theme'),
+                        'on_sale' => __('true', 'theme'),
+                        'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                        'price_value' => __('500', 'theme'),
+                        'price_sale_value' => __('600', 'theme'),
+                        'color_variation_1' => __('#d0edff', 'theme'),
+                        'color_variation_2' => __('#f1e7e6', 'theme'),
+                        'color_variation_3' => __('#bfbfbf', 'theme'),
+                    ])
                 </div>
                 <div class="grid-item">
-                    <div class="single-product-template">
-                        <div class="wrapper">
-                            <div class="img-wrapper">
-                                <a href="#!"></a>
-                                <div class="front">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                                <div class="back">
-                                    <img src="@asset('images/vegetables/product.jpg')" alt="">
-                                </div>
-                            </div>
-                            <div class="lable-block flex ai-start jc-sb">
-                                <p class="new">new</p>
-                                <p class="sale">on sale</p>
-                            </div>
-                            <div class="cart-info">
-                                <p class="hover-animate add-to-cart">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate add-to-wishlist">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                                <p class="hover-animate quick-view">
-                                    <img class="svg" src="@asset('images/icons/product-icon.svg')" alt="icon">
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product-detail">
-                            <div class="rating flex ai-center jc-start">
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div><div class="star fill">
-                                    <img class="svg" src="@asset('images/vegetables/star-fill.svg')" alt="icon">
-                                </div>
-                                <div class="star">
-                                    <img class="svg" src="@asset('images/vegetables/star.svg')" alt="icon">
-                                </div>
-                            </div>
-                            <a href="#!" class="product-name">Slim Fit Cotton Shirt</a>
-                            <div class="pricing flex flex-column ai-start jc-start">
-                                <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                <div class="price-sale flex ai-end jc-start">
-                                    <p class="price"><span class="currency">$</span><span class="val">500</span></p>
-                                    <p class="price sale-price"><span class="currency">$</span><span class="val">500</span></p>
-                                </div>
-                            </div>
-                            <div class="color-variations">
-                                <ul class="colors flex ai-center">
-                                    <li class="bg" style="background: #d0edff"></li>
-                                    <li class="bg" style="background: #f1e7e6"></li>
-                                    <li class="bg" style="background: #bfbfbf"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @include ('partials.content-single-product-template',
+                    [
+                        'product_link' => __('some link', 'theme'),
+                        'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                        'new_product' => __('true', 'theme'),
+                        'on_sale' => __('true', 'theme'),
+                        'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                        'price_value' => __('500', 'theme'),
+                        'price_sale_value' => __('600', 'theme'),
+                        'color_variation_1' => __('#d0edff', 'theme'),
+                        'color_variation_2' => __('#f1e7e6', 'theme'),
+                        'color_variation_3' => __('#bfbfbf', 'theme'),
+                    ])
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- Exclusive Products end-->
+<!-- Special rpoducts grid start -->
+{{-- <section class="section section-special-products-grid">
+    <div class="container">
+        @include ('partials.content-section-heading', ['title' => __('SPECIAL PRODUCTS', 'theme')])
+        <div class="listing-special-products flex flex-wrap ai-start jc-sb">
+            <div class="col">
+                @foreach($products as $key => $product)
+                    @if ($key < 2)
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
+                    @endif
+                @endforeach
+            </div>
+            <div class="col main-col">
+                @foreach($products as $key => $product)
+                    @if ($key == 2)
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
+                    @endif
+                @endforeach
+            </div>
+            <div class="col">
+                @foreach($products as $key => $product)
+                    @if ($key > 2 && $key < 5)
+                        @include ('partials.content-single-product-template',
+                        [
+                            'product_link' => __('some link', 'theme'),
+                            'first_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'second_image' => __('https://localhost:3414/wp-content/themes/woosage/dist/images/vegetables/product.jpg', 'theme'),
+                            'new_product' => __('true', 'theme'),
+                            'on_sale' => __('true', 'theme'),
+                            'product_name' => __('Slim Fit Cotton Shirt', 'theme'),
+                            'price_value' => __('500', 'theme'),
+                            'price_sale_value' => __('600', 'theme'),
+                            'color_variation_1' => __('#d0edff', 'theme'),
+                            'color_variation_2' => __('#f1e7e6', 'theme'),
+                            'color_variation_3' => __('#bfbfbf', 'theme'),
+                        ])
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section> --}}
+<!-- Special rpoducts grid end-->
+<!-- product-box slider -->
+<section class="section-b-space addtocart_count">
+    <div class="full-box">
+        <div class="container">
+            
+            <div class="row">
+                @php $count = 1; @endphp
+                @foreach($products as $product)
+                @if(in_array($product_cat['special'], $product['cat']))
+                @if($count == 1)
+                <div class="col-md-4">
+                    <div class="theme-card center-align">
+                        <div class="offer-slider">
+                            <div class="sec-1">
+                @elseif($count == 3)
+                </div>
+                    </div>
+                    </div>
+                </div>
+                @endif
+                @if($count++ != 3)
+                <div class="product-box2">
+                    <div class="media">
+                        <a href="{{$product['href']}}"><img
+                                class="img-fluid blur-up lazyload"
+                                src="{{$product['image']}}" alt=""></a>
+                        <div class="media-body align-self-center">
+                            <a href="{{$product['href']}}">
+                                <h6>{{$product['title']}}</h6>
+                            </a>
+                            <h4>{!!$data['product-symbol']!!}{{$product['price']}}</h4>
+                        </div>
+                    </div>
+                </div>
+                @else
+                <div class="col-md-4 center-slider">
+                    <div>
+                        <div class="offer-slider">
+                            <div>
+                                <div class="product-box product-wrap">
+                                    <div class="img-wrapper">
+                                        <div class="front">
+                                            <a href="{{$product['href']}}"><img
+                                                    src="{{$product['image']}}"
+                                                    class="img-fluid blur-up lazyload" alt=""></a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
+                                                    aria-hidden="true"></i></a>
+                                            <a href="#" data-toggle="modal" data-target="#quick-view"
+                                                title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
+                                            <a href="compare.html" title="Compare"><i class="ti-reload"
+                                                    aria-hidden="true"></i></a>
+                                        </div>
+                                        <div class="addtocart_btn">
+                                            <button class="add-button add_cart" title="Add to cart">
+                                                add to cart
+                                            </button>
+                                            <div class="qty-box cart_qty">
+                                                <div class="input-group">
+                                                    <button type="button" class="btn quantity-left-minus"
+                                                        data-type="minus" data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input type="text" name="quantity"
+                                                        class="form-control input-number qty-input" value="1">
+                                                    <button type="button" class="btn quantity-right-plus"
+                                                        data-type="plus" data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail text-center">
+                                        <a href="{{$product['href']}}">
+                                            <h6>{{$product['title']}}</h6>
+                                        </a>
+                                        <h4>{!!$data['product-symbol']!!}{{$product['price']}} 
+                                        @if($product['discount'])
+                                        <del>{!!$data['product-symbol']!!}{{$product['discount']}}</del>
+                                        @endif
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @php $count = 1; @endphp
+                @endif
+                @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product-box slider end -->
