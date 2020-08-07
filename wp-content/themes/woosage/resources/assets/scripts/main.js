@@ -11,6 +11,7 @@ import vegetables from './routes/vegetables';
 import home from './routes/home';
 import aboutUs from './routes/about';
 import product from './routes/product';
+import cart from './routes/cart';
 
 
   
@@ -24,6 +25,7 @@ const routes = new Router({
   // About Us page, note the change from about-us to aboutUs.
   aboutUs,
   product,
+  cart,
 });
 
 // Load Events

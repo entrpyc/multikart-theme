@@ -7,7 +7,7 @@
       max-width: 229px;
       width: 100%;
       &.head-label {
-        font-weight: 900;
+        font-weight: 600;
         color: #222222;
         text-transform: uppercase;
         font-size: 14px;
@@ -62,6 +62,103 @@
     .table-row {
       width: 100%;
       border-bottom: 2px solid #dee2e6;
+    }
+
+    .table-mobile {
+      display: none;
+    }
+
+    @media screen and(max-width:1024px) {
+      .qty-box .input-group {
+        .btn {
+          padding: 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .form-control {
+          max-width: 40px;
+        }
+      }
+    }
+
+    @media screen and(max-width:767px) {
+      .table-mobile {
+        display: block;
+        .rest {
+          flex: 0 1 60%;
+          max-width: 60%;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+      .table-desktop {
+        display: none;
+      }
+      .table-row {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        position: relative;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        .table-col {
+          &.product-image {
+            flex: 0 1 40%;
+            max-width: 40%;
+            justify-content: center;
+            img {
+              max-height: 100%;
+            }
+          }
+          &.product-price,
+          &.product-subtotal {
+            h2 {
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+          &.product-subtotal {
+            h2 {
+              & > span {
+                font-size: 16px;
+                &:first-child {
+                  text-transform: capitalize;
+                  margin-right: 10px;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+          &.product-name {
+            max-width: calc( 100% - 30px);
+          }
+          &.product-remove {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+          }
+          &.product-quantity {
+            margin: 5px 0;
+            .qty-box {
+              margin-bottom: 0;
+            }
+          }
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 5px 12px;
+        }
+      }
+      .qty-box .input-group {
+        .form-control {
+          height: 30px;
+        }
+      }
     }
   }
 }
