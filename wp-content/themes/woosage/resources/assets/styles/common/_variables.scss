@@ -1,30 +1,47 @@
-
+/* stylelint-disable selector-no-id, declaration-no-important, rule-empty-line-before */
 
 //grid
-$container: 1400px; // container max-width
-$container-padding: 0 15px;
-$container-high-end: 90%; // container with above 1920
+$container: 1400px;
+$container-padding: 15px;
+$container-high-end: 90%;
 
-$sidebar-width: 380px; // set sidebar width if existing
-$content-full: 100%; // default: 100 - default with for content
+$sidebar-width: 380px;
+$content-full: 100%;
 
 // colors
 $third-color: #992020;
 $secondary-color: #ff4c3b;
 $primary-color: #222;
+$dark-gray: #333;
 $gray-color: #444;
 $lighter-color: #ddd;
+
+$border-light: #ced4da;
+$border-secondary: #dee2e6;
+$input-focus: #80bdff;
 
 $white: #fff;
 $black: #000;
 
 // breakpoints
-$screen-l: 1366px;
+$screen-high-end: 1920px;
+$screen-l: 1280px;
 $screen-tablet: 1024px;
 $screen-mobile: 768px;
 $screen-xs: 320px;
 
+// breakpoints for grid drawer
+$gd-breakpoints: (
+  "-high-end": $screen-high-end,
+  "-desktop": $screen-l,
+  "-tablet": $screen-tablet,
+  "-mobile": $screen-mobile,
+  "-iPhone": $screen-xs,
+);
+
 // padding
+$padding-smallest: 5px;
+$padding-min: 10px;
 $padding-xs: 15px;
 $padding-small: 20px;
 $padding-regular: 30px;
@@ -32,7 +49,9 @@ $padding-large: 40px;
 $padding-xl: 60px;
 
 // margin
-$margin-xs: 12px;
+$margin-smallest: 5px;
+$margin-min: 10px;
+$margin-xs: 15px;
 $margin-small: 20px;
 $margin-regular: 30px;
 $margin-large: 40px;
@@ -40,13 +59,19 @@ $margin-xl: 60px;
 
 // font-size
 $size-large: 24px;
+$size-semi-large: 18px;
 $size-primary: 16px;
 $size-small: 14px;
 
-// font-size
+// line-height
 $height-large: 28px;
 $height-primary: 18px;
 $height-small: 16px;
+
+//letter-spacing
+$spacing-large: 28px;
+$spacing-primary: 18px;
+$spacing-small: 0.05em;
 
 // font-family
 $font-primary: "Montserrat", sans-serif;
@@ -68,6 +93,7 @@ $weight-strong: 700;
 // background
 $background-primary: $white;
 $background-secondary: #f8f8f8;
+
 
 // multikart variables
 

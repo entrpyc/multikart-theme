@@ -1,0 +1,117 @@
+.collection-product-description {
+  h2 {
+    text-transform: uppercase;
+    margin-bottom: $margin-xs;
+    font-size: $size-large;
+    line-height: $height-primary;
+    font-weight: 700;
+    color: $primary-color;
+    font-family: $font-primary;
+  }
+
+  h4 {
+    margin-bottom: $margin-min;
+
+    del {
+      color: $color-primary;
+      font-family: $font-primary;
+      font-size: $size-small;
+    }
+
+    span {
+      padding-left: $padding-smallest;
+      font-family: $font-primary;
+      color: $secondary-color;
+    }
+  }
+
+  h3 {
+    font-size: $size-large;
+    color: $primary-color;
+    font-weight: $weight-light;
+    margin-bottom: $margin-xs;
+    font-family: $font-primary;
+  }
+
+  .color-variant,
+  .size-variant {
+    list-style: none;
+
+    li {
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      border-radius: 50%;
+
+      & + li {
+        margin-left: $margin-smallest;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .product-description {
+    padding-top: $padding-xs;
+    padding-bottom: $padding-small;
+    border-top: 1px dashed $lighter-color;
+    margin-top: $margin-min;
+  }
+
+  .product-title {
+    color: $primary-color;
+    text-transform: capitalize;
+    font-weight: $weight-strong;
+    font-size: $size-small;
+    font-family: $font-primary;
+  }
+
+  /* stylelint-disable */
+  .size-variant {
+    margin: $margin-min 0;
+    li {
+      border: 1px solid $background-secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &.active {
+        background-color: $background-secondary;
+      }
+      a {
+        color: $primary-color;
+        font-size: $height-small;
+        font-family: $font-primary;
+      }
+    }
+  }
+  /* stylelint-enable */
+
+  .qty-box {
+    margin-top: $margin-min;
+  }
+
+  .product-buttons {
+    margin-bottom: $margin-small;
+  }
+
+  .border-product {
+    padding-top: $margin-xs;
+    padding-bottom: $margin-small;
+    border-top: 1px dashed $lighter-color;
+  }
+
+  p {
+    font-size: $size-small;
+    color: $color-primary;
+    margin-bottom: 0;
+    line-height: $height-primary;
+    font-family: $font-primary;
+  }
+
+  input {
+    font-family: $font-primary;
+  }
+}

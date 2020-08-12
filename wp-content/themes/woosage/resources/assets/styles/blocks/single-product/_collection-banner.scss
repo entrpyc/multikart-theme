@@ -1,0 +1,40 @@
+.collection-banner {
+  .banner {
+    border: 1px solid #ddd;
+    padding: $padding-min $padding-regular;
+
+    .icon-group {
+      padding: $padding-small 0;
+
+      & + .icon-group {
+        border-top: 1px solid $lighter-color;
+      }
+
+      svg {
+        max-width: 40px;
+        width: 100%;
+        max-height: 40px;
+        height: auto;
+      }
+
+      .text {
+        margin-left: $margin-min;
+
+        h4 {
+          font-size: $size-semi-large;
+          text-transform: capitalize;
+          font-weight: $weight-light;
+          color: $primary-color;
+          font-family: $font-primary;
+          margin-bottom: $margin-smallest;
+        }
+
+        p {
+          color: $gray-color;
+          font-family: $font-primary;
+          font-size: $size-small;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.collection-filter {
+  .accordeon-module {
+    border: 1px solid #ddd;
+
+    .head {
+      padding: $padding-regular;
+      cursor: pointer;
+
+      h3 {
+        position: relative;
+        text-transform: uppercase;
+        font-size: $size-primary;
+        color: $gray-color;
+        font-weight: $weight-bold;
+        font-family: $font-primary;
+      }
+    }
+
+    .body {
+      .fit {
+        padding: $padding-regular;
+        padding-top: 0;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          & + li {
+            padding-top: $padding-min;
+          }
+
+          a {
+            color: $color-primary;
+            text-transform: uppercase;
+            font-size: $size-primary;
+            text-decoration: none;
+            font-family: $font-primary;
+          }
+        }
+      }
+    }
+  }
+}
