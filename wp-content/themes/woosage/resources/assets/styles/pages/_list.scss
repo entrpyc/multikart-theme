@@ -1,0 +1,37 @@
+/* stylelint-disable no-duplicate-selectors */
+
+.page-list {
+  .collection-filter {
+    border: 1px solid $lighter-color;
+
+    .accordeon-module {
+      border: none;
+    }
+  }
+
+  .category-description {
+    .text {
+      h4 {
+        font-weight: $weight-bold;
+        color: $gray-color;
+        font-size: $size-semi-large;
+        text-transform: capitalize;
+      }
+
+      h5 {
+        font-size: $size-primary;
+        font-weight: $weight-bold;
+        color: $gray-color;
+        line-height: $height-primary;
+        margin-top: $margin-xs;
+      }
+
+      p {
+        font-size: $size-small;
+        line-height: $height-primary;
+        color: $color-primary;
+        margin-top: $margin-min;
+      }
+    }
+  }
+}

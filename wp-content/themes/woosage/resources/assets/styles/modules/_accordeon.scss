@@ -1,0 +1,15 @@
+.accordeon-module {
+  overflow: hidden;
+
+  .body {
+    transition: 0.35s all ease-in-out;
+    max-height: 0;
+  }
+
+  &.open {
+    .body {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
