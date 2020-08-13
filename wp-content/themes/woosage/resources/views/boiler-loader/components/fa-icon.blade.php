@@ -1,1 +1,0 @@
-<li><a href="#"><i class="fa fa-{{ $icon }}"></i></a></li>
