@@ -1,3 +1,9 @@
+
+@php
+$parallax_image = $data['parallax']['image'];
+$parallax_title = $data['parallax']['title'];
+$parallax_text = $data['parallax']['text'];
+@endphp
 <!-- Home slider start -->
 @if ($data['hero-slider'])
     <section class="section section-home-slider">
@@ -103,12 +109,12 @@
 <!-- Home services end -->
 <!-- Parallax banner start -->
 <section class="section section-parallax">
-    <div class="back" style="background-image: url('{{$data['parallax']['image']}}')">
+    <div class="back" style="background-image: url('{{$parallax_image}}')">
         <div class="container">
             <div class="content flex flex-column jc-start ai-start">
                 <div class="content-wrapper flex flex-column jc-center ai-start">
-                    <h2>{{$data['parallax']['title']}}</h2>
-                    {!!$data['parallax']['text']!!}
+                    <h2>{{$parallax_title}}</h2>
+                    {!!$parallax_text!!}
                 </div>
             </div>
         </div>
